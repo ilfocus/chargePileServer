@@ -1,0 +1,50 @@
+E:\C#\串口\上位机-串口通信\基本程序\串口通信\串口通信\obj\Debug\ResolveAssemblyReference.cache
+E:\C#\串口\上位机-串口通信\基本程序\串口通信\串口通信\obj\Debug\串口通信.Form1.resources
+E:\C#\串口\上位机-串口通信\基本程序\串口通信\串口通信\obj\Debug\串口通信.Properties.Resources.resources
+E:\C#\串口\上位机-串口通信\基本程序\串口通信\串口通信\obj\Debug\串口通信.csproj.GenerateResource.Cache
+E:\C#\串口\上位机-串口通信\基本程序\串口通信\串口通信\bin\Debug\串口通信.exe
+E:\C#\串口\上位机-串口通信\基本程序\串口通信\串口通信\bin\Debug\串口通信.pdb
+E:\C#\串口\上位机-串口通信\基本程序\串口通信\串口通信\obj\Debug\串口通信.exe
+E:\C#\串口\上位机-串口通信\基本程序\串口通信\串口通信\obj\Debug\串口通信.pdb
+E:\C#\串口\上位机-串口通信\基本程序\串口通信 - 基本通信\串口通信\obj\Debug\串口通信.exe
+E:\C#\串口\上位机-串口通信\基本程序\串口通信 - 基本通信\串口通信\obj\Debug\串口通信.pdb
+E:\C#\串口\上位机-串口通信\基本程序\串口通信 - 基本通信\串口通信\bin\Debug\串口通信.exe
+E:\C#\串口\上位机-串口通信\基本程序\串口通信 - 基本通信\串口通信\bin\Debug\串口通信.pdb
+E:\C#\串口\上位机-串口通信\基本程序\串口通信 - 基本通信\串口通信\obj\Debug\ResolveAssemblyReference.cache
+E:\C#\串口\上位机-串口通信\基本程序\串口通信 - 基本通信\串口通信\obj\Debug\串口通信.Form1.resources
+E:\C#\串口\上位机-串口通信\基本程序\串口通信 - 基本通信\串口通信\obj\Debug\串口通信.Properties.Resources.resources
+E:\C#\串口\上位机-串口通信\基本程序\串口通信 - 基本通信\串口通信\obj\Debug\串口通信.csproj.GenerateResource.Cache
+F:\5KG_slave\上位机测试软件\5kw单相光伏并网逆变器\串口通信 - 基本通信\串口通信\obj\Debug\串口通信.exe
+F:\5KG_slave\上位机测试软件\5kw单相光伏并网逆变器\串口通信 - 基本通信\串口通信\obj\Debug\串口通信.pdb
+F:\5KG_slave\上位机测试软件\5kw单相光伏并网逆变器\串口通信 - 基本通信\串口通信\bin\Debug\串口通信.exe
+F:\5KG_slave\上位机测试软件\5kw单相光伏并网逆变器\串口通信 - 基本通信\串口通信\bin\Debug\串口通信.pdb
+F:\5KG_slave\上位机测试软件\5kw单相光伏并网逆变器\串口通信 - 基本通信\串口通信\obj\Debug\ResolveAssemblyReference.cache
+F:\5KG_slave\上位机测试软件\5kw单相光伏并网逆变器\串口通信 - 基本通信\串口通信\obj\Debug\串口通信.Form1.resources
+F:\5KG_slave\上位机测试软件\5kw单相光伏并网逆变器\串口通信 - 基本通信\串口通信\obj\Debug\串口通信.Properties.Resources.resources
+F:\5KG_slave\上位机测试软件\5kw单相光伏并网逆变器\串口通信 - 基本通信\串口通信\obj\Debug\GenerateResource-ResGen.read.1.tlog
+F:\5KG_slave\上位机测试软件\5kw单相光伏并网逆变器\串口通信 - 基本通信\串口通信\obj\Debug\GenerateResource-ResGen.write.1.tlog
+F:\5KG_slave\上位机测试软件\串口通信 - 基本通信 - 副本\串口通信\obj\Debug\串口通信.exe
+F:\5KG_slave\上位机测试软件\串口通信 - 基本通信 - 副本\串口通信\obj\Debug\串口通信.pdb
+F:\电源监控模块的功能设计\上位机\串口通信 -C#\串口通信\obj\Debug\串口通信.exe
+F:\电源监控模块的功能设计\上位机\串口通信 -C#\串口通信\obj\Debug\串口通信.pdb
+F:\电源监控模块的功能设计\上位机\串口通信 -C#\串口通信\bin\Debug\串口通信.exe
+F:\电源监控模块的功能设计\上位机\串口通信 -C#\串口通信\bin\Debug\串口通信.pdb
+F:\电源监控模块的功能设计\上位机\串口通信 -C#\串口通信\obj\Debug\ResolveAssemblyReference.cache
+F:\电源监控模块的功能设计\上位机\串口通信 -C#\串口通信\obj\Debug\串口通信.Form1.resources
+F:\电源监控模块的功能设计\上位机\串口通信 -C#\串口通信\obj\Debug\串口通信.Properties.Resources.resources
+F:\电源监控模块的功能设计\上位机\串口通信 -C#\串口通信\obj\Debug\GenerateResource-ResGen.read.1.tlog
+F:\电源监控模块的功能设计\上位机\串口通信 -C#\串口通信\obj\Debug\GenerateResource-ResGen.write.1.tlog
+F:\电源监控模块的功能设计\PC机相关\上位机\串口通信 -C#\串口通信\obj\Debug\串口通信.exe
+F:\电源监控模块的功能设计\PC机相关\上位机\串口通信 -C#\串口通信\obj\Debug\串口通信.pdb
+F:\电源监控模块的功能设计\PC机相关\上位机\上位机与分机直接通信测试程序\通信测试-C#\串口通信\obj\Debug\串口通信.exe
+F:\电源监控模块的功能设计\PC机相关\上位机\上位机与分机直接通信测试程序\通信测试-C#\串口通信\obj\Debug\串口通信.pdb
+F:\(4) 能量回收电源监控\PC机相关\上位机与分机直接通信测试程序\分机与主机通信20140417-V0.0\串口通信\obj\Debug\串口通信.exe
+F:\(4) 能量回收电源监控\PC机相关\上位机与分机直接通信测试程序\分机与主机通信20140417-V0.0\串口通信\obj\Debug\串口通信.pdb
+F:\(4) 能量回收电源监控\PC机相关\上位机与分机直接通信测试程序\分机与主机通信20140417-V0.0\串口通信\obj\Debug\ResolveAssemblyReference.cache
+F:\(4) 能量回收电源监控\PC机相关\上位机与分机直接通信测试程序\分机与主机通信20140417-V0.0\串口通信\obj\Debug\串口通信.Form1.resources
+F:\(4) 能量回收电源监控\PC机相关\上位机与分机直接通信测试程序\分机与主机通信20140417-V0.0\串口通信\obj\Debug\串口通信.Properties.Resources.resources
+F:\(4) 能量回收电源监控\PC机相关\上位机与分机直接通信测试程序\分机与主机通信20140417-V0.0\串口通信\obj\Debug\GenerateResource-ResGen.read.1.tlog
+F:\(4) 能量回收电源监控\PC机相关\上位机与分机直接通信测试程序\分机与主机通信20140417-V0.0\串口通信\obj\Debug\GenerateResource-ResGen.write.1.tlog
+F:\(4) 能量回收电源监控\PC机相关\上位机与分机直接通信测试程序\分机与主机通信20140417-V0.0\串口通信\bin\Debug\串口通信.exe
+F:\(4) 能量回收电源监控\PC机相关\上位机与分机直接通信测试程序\分机与主机通信20140417-V0.0\串口通信\bin\Debug\串口通信.pdb
+F:\(4) 能量回收电源监控\PC机相关\上位机与分机直接通信测试程序\分机与主机通信20140417-V0.0\串口通信\bin\Debug\ZedGraph.dll

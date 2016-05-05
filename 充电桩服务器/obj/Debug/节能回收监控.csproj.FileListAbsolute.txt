@@ -1,0 +1,294 @@
+F:\(4) 能量回收电源监控\PC机相关\上位机与分机直接通信测试程序\分机与主机通信20140417-V0.0\节能回收监控\obj\Debug\串口通信.exe
+F:\(4) 能量回收电源监控\PC机相关\上位机与分机直接通信测试程序\分机与主机通信20140417-V0.0\节能回收监控\obj\Debug\串口通信.pdb
+F:\(4) 能量回收电源监控\PC机相关\上位机与分机直接通信测试程序\分机与主机通信20140417-V0.0\节能回收监控\bin\Debug\串口通信.exe
+F:\(4) 能量回收电源监控\PC机相关\上位机与分机直接通信测试程序\分机与主机通信20140417-V0.0\节能回收监控\bin\Debug\串口通信.pdb
+F:\(4) 能量回收电源监控\PC机相关\上位机与分机直接通信测试程序\分机与主机通信20140417-V0.0\节能回收监控\bin\Debug\ZedGraph.dll
+F:\(4) 能量回收电源监控\PC机相关\上位机与分机直接通信测试程序\分机与主机通信20140417-V0.0\节能回收监控\obj\Debug\ResolveAssemblyReference.cache
+F:\(4) 能量回收电源监控\PC机相关\上位机与分机直接通信测试程序\分机与主机通信20140417-V0.0\节能回收监控\obj\Debug\串口通信.MonitoringInterface.resources
+F:\(4) 能量回收电源监控\PC机相关\上位机与分机直接通信测试程序\分机与主机通信20140417-V0.0\节能回收监控\obj\Debug\串口通信.Properties.Resources.resources
+F:\(4) 能量回收电源监控\PC机相关\上位机与分机直接通信测试程序\分机与主机通信20140417-V0.0\节能回收监控\obj\Debug\串口通信.SetComPara.resources
+F:\(4) 能量回收电源监控\PC机相关\上位机与分机直接通信测试程序\分机与主机通信20140417-V0.0\节能回收监控\obj\Debug\GenerateResource-ResGen.read.1.tlog
+F:\(4) 能量回收电源监控\PC机相关\上位机与分机直接通信测试程序\分机与主机通信20140417-V0.0\节能回收监控\obj\Debug\GenerateResource-ResGen.write.1.tlog
+F:\(4) 能量回收电源监控\（1）PC机相关\上位机与分机直接通信测试程序\分机与主机通信20140515-V0.1\节能回收监控\obj\Debug\串口通信.exe
+F:\(4) 能量回收电源监控\（1）PC机相关\上位机与分机直接通信测试程序\分机与主机通信20140515-V0.1\节能回收监控\obj\Debug\串口通信.pdb
+F:\(4) 能量回收电源监控\（1）PC机相关\上位机与分机直接通信测试程序\分机与主机通信20140515-V0.1\节能回收监控\bin\Debug\串口通信.exe
+F:\(4) 能量回收电源监控\（1）PC机相关\上位机与分机直接通信测试程序\分机与主机通信20140515-V0.1\节能回收监控\bin\Debug\串口通信.pdb
+F:\(4) 能量回收电源监控\（1）PC机相关\上位机与分机直接通信测试程序\分机与主机通信20140515-V0.1\节能回收监控\bin\Debug\ZedGraph.dll
+F:\(4) 能量回收电源监控\（1）PC机相关\上位机与分机直接通信测试程序\分机与主机通信20140515-V0.1\节能回收监控\obj\Debug\ResolveAssemblyReference.cache
+F:\(4) 能量回收电源监控\（1）PC机相关\上位机与分机直接通信测试程序\分机与主机通信20140515-V0.1\节能回收监控\obj\Debug\串口通信.MonitoringInterface.resources
+F:\(4) 能量回收电源监控\（1）PC机相关\上位机与分机直接通信测试程序\分机与主机通信20140515-V0.1\节能回收监控\obj\Debug\串口通信.Properties.Resources.resources
+F:\(4) 能量回收电源监控\（1）PC机相关\上位机与分机直接通信测试程序\分机与主机通信20140515-V0.1\节能回收监控\obj\Debug\串口通信.SetComPara.resources
+F:\(4) 能量回收电源监控\（1）PC机相关\上位机与分机直接通信测试程序\分机与主机通信20140515-V0.1\节能回收监控\obj\Debug\GenerateResource-ResGen.read.1.tlog
+F:\(4) 能量回收电源监控\（1）PC机相关\上位机与分机直接通信测试程序\分机与主机通信20140515-V0.1\节能回收监控\obj\Debug\GenerateResource-ResGen.write.1.tlog
+F:\(4) 能量回收电源监控\（1）PC机相关\上位机与分机直接通信测试程序\分机与主机通信20141101-V0.1\节能回收监控\obj\Debug\串口通信.exe
+F:\(4) 能量回收电源监控\（1）PC机相关\上位机与分机直接通信测试程序\分机与主机通信20141101-V0.1\节能回收监控\obj\Debug\串口通信.pdb
+F:\(4) 能量回收电源监控\（1）PC机相关\上位机与分机直接通信测试程序\分机与主机通信20141101-V0.1\节能回收监控\bin\Debug\串口通信.exe
+F:\(4) 能量回收电源监控\（1）PC机相关\上位机与分机直接通信测试程序\分机与主机通信20141101-V0.1\节能回收监控\bin\Debug\串口通信.pdb
+F:\(4) 能量回收电源监控\（1）PC机相关\上位机与分机直接通信测试程序\分机与主机通信20141101-V0.1\节能回收监控\bin\Debug\ZedGraph.dll
+F:\(4) 能量回收电源监控\（1）PC机相关\上位机与分机直接通信测试程序\分机与主机通信20141101-V0.1\节能回收监控\obj\Debug\ResolveAssemblyReference.cache
+F:\(4) 能量回收电源监控\（1）PC机相关\上位机与分机直接通信测试程序\分机与主机通信20141101-V0.1\节能回收监控\obj\Debug\串口通信.MonitoringInterface.resources
+F:\(4) 能量回收电源监控\（1）PC机相关\上位机与分机直接通信测试程序\分机与主机通信20141101-V0.1\节能回收监控\obj\Debug\串口通信.Properties.Resources.resources
+F:\(4) 能量回收电源监控\（1）PC机相关\上位机与分机直接通信测试程序\分机与主机通信20141101-V0.1\节能回收监控\obj\Debug\串口通信.SetComPara.resources
+F:\(4) 能量回收电源监控\（1）PC机相关\上位机与分机直接通信测试程序\分机与主机通信20141101-V0.1\节能回收监控\obj\Debug\GenerateResource-ResGen.read.1.tlog
+F:\(4) 能量回收电源监控\（1）PC机相关\上位机与分机直接通信测试程序\分机与主机通信20141101-V0.1\节能回收监控\obj\Debug\GenerateResource-ResGen.write.1.tlog
+F:\(4) 电源老化车\（1）PC机相关\上位机与分机直接通信测试程序\分机与主机通信20141101-V0.1\节能回收监控\obj\Debug\串口通信.exe
+F:\(4) 电源老化车\（1）PC机相关\上位机与分机直接通信测试程序\分机与主机通信20141101-V0.1\节能回收监控\obj\Debug\串口通信.pdb
+F:\(4) 电源老化车\（1）PC机相关\上位机与分机直接通信测试程序\分机与主机通信20141101-V0.1\节能回收监控\bin\Debug\串口通信.exe
+F:\(4) 电源老化车\（1）PC机相关\上位机与分机直接通信测试程序\分机与主机通信20141101-V0.1\节能回收监控\bin\Debug\串口通信.pdb
+F:\(4) 电源老化车\（1）PC机相关\上位机与分机直接通信测试程序\分机与主机通信20141101-V0.1\节能回收监控\bin\Debug\ZedGraph.dll
+F:\(4) 电源老化车\（1）PC机相关\上位机与分机直接通信测试程序\分机与主机通信20141101-V0.1\节能回收监控\obj\Debug\ResolveAssemblyReference.cache
+F:\(4) 电源老化车\（1）PC机相关\上位机与分机直接通信测试程序\分机与主机通信20141101-V0.1\节能回收监控\obj\Debug\串口通信.MonitoringInterface.resources
+F:\(4) 电源老化车\（1）PC机相关\上位机与分机直接通信测试程序\分机与主机通信20141101-V0.1\节能回收监控\obj\Debug\串口通信.Properties.Resources.resources
+F:\(4) 电源老化车\（1）PC机相关\上位机与分机直接通信测试程序\分机与主机通信20141101-V0.1\节能回收监控\obj\Debug\串口通信.SetComPara.resources
+F:\(4) 电源老化车\（1）PC机相关\上位机与分机直接通信测试程序\分机与主机通信20141101-V0.1\节能回收监控\obj\Debug\GenerateResource-ResGen.read.1.tlog
+F:\(4) 电源老化车\（1）PC机相关\上位机与分机直接通信测试程序\分机与主机通信20141101-V0.1\节能回收监控\obj\Debug\GenerateResource-ResGen.write.1.tlog
+D:\WQi\分机与主机通信20141101-V0.1\节能回收监控\obj\Debug\串口通信.exe
+D:\WQi\分机与主机通信20141101-V0.1\节能回收监控\obj\Debug\串口通信.pdb
+D:\WQi\分机与主机通信20141101-V0.1\节能回收监控\bin\Debug\串口通信.exe
+D:\WQi\分机与主机通信20141101-V0.1\节能回收监控\bin\Debug\串口通信.pdb
+D:\WQi\分机与主机通信20141101-V0.1\节能回收监控\obj\Debug\串口通信.MonitoringInterface.resources
+D:\WQi\分机与主机通信20141101-V0.1\节能回收监控\obj\Debug\串口通信.Properties.Resources.resources
+D:\WQi\分机与主机通信20141101-V0.1\节能回收监控\obj\Debug\串口通信.SetComPara.resources
+D:\WQi\分机与主机通信20141101-V0.1\节能回收监控\obj\Debug\节能回收监控.csproj.GenerateResource.Cache
+D:\WQi\分机与主机通信20141101-V0.1\节能回收监控\obj\Debug\节能回收监控.csprojResolveAssemblyReference.cache
+D:\WQi\分机与主机通信20141226-V0.2\节能回收监控\obj\Debug\串口通信.exe
+D:\WQi\分机与主机通信20141226-V0.2\节能回收监控\obj\Debug\串口通信.pdb
+D:\WQi\分机与主机通信20141226-V0.2\节能回收监控\bin\Debug\串口通信.exe
+D:\WQi\分机与主机通信20141226-V0.2\节能回收监控\bin\Debug\串口通信.pdb
+D:\WQi\分机与主机通信20141226-V0.2\节能回收监控\obj\Debug\节能回收监控.csprojResolveAssemblyReference.cache
+D:\WQi\分机与主机通信20141226-V0.2\节能回收监控\obj\Debug\串口通信.MonitoringInterface.resources
+D:\WQi\分机与主机通信20141226-V0.2\节能回收监控\obj\Debug\串口通信.Properties.Resources.resources
+D:\WQi\分机与主机通信20141226-V0.2\节能回收监控\obj\Debug\串口通信.SetComPara.resources
+D:\WQi\分机与主机通信20141226-V0.2\节能回收监控\obj\Debug\节能回收监控.csproj.GenerateResource.Cache
+D:\WQi\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\串口通信.exe
+D:\WQi\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\节能回收监控.csprojResolveAssemblyReference.cache
+D:\WQi\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\串口通信.MonitoringInterface.resources
+D:\WQi\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\串口通信.Properties.Resources.resources
+D:\WQi\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\串口通信.SetComPara.resources
+D:\WQi\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\节能回收监控.csproj.GenerateResource.Cache
+D:\WQi\分机与主机通信20141226-V0.4\节能回收监控\bin\Debug\串口通信.exe
+D:\WQi\分机与主机通信20141226-V0.4\节能回收监控\bin\Debug\串口通信.pdb
+D:\WQi\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\串口通信.pdb
+F:\(4) 电源老化车\（1）PC机相关\From FGS\分机与主机通信20141226-V0.4-轮询\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\串口通信.exe
+F:\(4) 电源老化车\（1）PC机相关\From FGS\分机与主机通信20141226-V0.4-轮询\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\串口通信.pdb
+F:\(4) 电源老化车\（1）PC机相关\From FGS\分机与主机通信20141226-V0.4-轮询\分机与主机通信20141226-V0.4\节能回收监控\bin\Debug\串口通信.exe
+F:\(4) 电源老化车\（1）PC机相关\From FGS\分机与主机通信20141226-V0.4-轮询\分机与主机通信20141226-V0.4\节能回收监控\bin\Debug\串口通信.pdb
+F:\(4) 电源老化车\（1）PC机相关\From FGS\分机与主机通信20141226-V0.4-轮询\分机与主机通信20141226-V0.4\节能回收监控\bin\Debug\ZedGraph.dll
+F:\(4) 电源老化车\（1）PC机相关\From FGS\分机与主机通信20141226-V0.4-轮询\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\ResolveAssemblyReference.cache
+F:\(4) 电源老化车\（1）PC机相关\From FGS\分机与主机通信20141226-V0.4-轮询\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\串口通信.MonitoringInterface.resources
+F:\(4) 电源老化车\（1）PC机相关\From FGS\分机与主机通信20141226-V0.4-轮询\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\串口通信.Properties.Resources.resources
+F:\(4) 电源老化车\（1）PC机相关\From FGS\分机与主机通信20141226-V0.4-轮询\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\串口通信.SetComPara.resources
+F:\(4) 电源老化车\（1）PC机相关\From FGS\分机与主机通信20141226-V0.4-轮询\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\GenerateResource-ResGen.read.1.tlog
+F:\(4) 电源老化车\（1）PC机相关\From FGS\分机与主机通信20141226-V0.4-轮询\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\GenerateResource-ResGen.write.1.tlog
+F:\(4) 电源老化车\（1）上位机监控\From FGS\分机与主机通信20141226-V0.4-轮询\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\串口通信.exe
+F:\(4) 电源老化车\（1）上位机监控\From FGS\分机与主机通信20141226-V0.4-轮询\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\串口通信.pdb
+F:\(4) 电源老化车\（1）上位机监控\From FGS\分机与主机通信20141226-V0.4-更改界面-添加设置功能\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\串口通信.exe
+F:\(4) 电源老化车\（1）上位机监控\From FGS\分机与主机通信20141226-V0.4-更改界面-添加设置功能\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\串口通信.pdb
+F:\(4) 电源老化车\（1）上位机监控\From FGS\分机与主机通信20141226-V0.4-更改界面-添加设置功能\分机与主机通信20141226-V0.4\节能回收监控\bin\Debug\串口通信.exe
+F:\(4) 电源老化车\（1）上位机监控\From FGS\分机与主机通信20141226-V0.4-更改界面-添加设置功能\分机与主机通信20141226-V0.4\节能回收监控\bin\Debug\串口通信.pdb
+F:\(4) 电源老化车\（1）上位机监控\From FGS\分机与主机通信20141226-V0.4-更改界面-添加设置功能\分机与主机通信20141226-V0.4\节能回收监控\bin\Debug\ZedGraph.dll
+F:\(4) 电源老化车\（1）上位机监控\From FGS\分机与主机通信20141226-V0.4-更改界面-添加设置功能\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\ResolveAssemblyReference.cache
+F:\(4) 电源老化车\（1）上位机监控\From FGS\分机与主机通信20141226-V0.4-更改界面-添加设置功能\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\串口通信.MonitoringInterface.resources
+F:\(4) 电源老化车\（1）上位机监控\From FGS\分机与主机通信20141226-V0.4-更改界面-添加设置功能\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\串口通信.Properties.Resources.resources
+F:\(4) 电源老化车\（1）上位机监控\From FGS\分机与主机通信20141226-V0.4-更改界面-添加设置功能\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\串口通信.SetComPara.resources
+F:\(4) 电源老化车\（1）上位机监控\From FGS\分机与主机通信20141226-V0.4-更改界面-添加设置功能\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\GenerateResource-ResGen.read.1.tlog
+F:\(4) 电源老化车\（1）上位机监控\From FGS\分机与主机通信20141226-V0.4-更改界面-添加设置功能\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\GenerateResource-ResGen.write.1.tlog
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20141226-V0.4-更改界面-添加设置功能\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\串口通信.exe
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20141226-V0.4-更改界面-添加设置功能\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\串口通信.pdb
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20141226-V0.4-更改界面-添加设置功能\分机与主机通信20141226-V0.4\节能回收监控\bin\Debug\串口通信.exe
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20141226-V0.4-更改界面-添加设置功能\分机与主机通信20141226-V0.4\节能回收监控\bin\Debug\串口通信.pdb
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20141226-V0.4-更改界面-添加设置功能\分机与主机通信20141226-V0.4\节能回收监控\bin\Debug\ZedGraph.dll
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20141226-V0.4-更改界面-添加设置功能\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\ResolveAssemblyReference.cache
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20141226-V0.4-更改界面-添加设置功能\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\串口通信.MonitoringInterface.resources
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20141226-V0.4-更改界面-添加设置功能\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\串口通信.Properties.Resources.resources
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20141226-V0.4-更改界面-添加设置功能\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\串口通信.SetComPara.resources
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20141226-V0.4-更改界面-添加设置功能\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\GenerateResource-ResGen.read.1.tlog
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20141226-V0.4-更改界面-添加设置功能\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\GenerateResource-ResGen.write.1.tlog
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20150311-V1.0\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\串口通信.exe
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20150311-V1.0\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\串口通信.pdb
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20150311-V1.0\分机与主机通信20141226-V0.4\节能回收监控\bin\Debug\串口通信.exe.config
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20150311-V1.0\分机与主机通信20141226-V0.4\节能回收监控\bin\Debug\串口通信.exe
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20150311-V1.0\分机与主机通信20141226-V0.4\节能回收监控\bin\Debug\串口通信.pdb
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20150311-V1.0\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\节能回收监控.MonitoringInterface.resources
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20150311-V1.0\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\节能回收监控.Properties.Resources.resources
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20150311-V1.0\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\节能回收监控.SetComPara.resources
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20150311-V1.0\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\节能回收监控.csproj.ResolveComReference.cache
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20150311-V1.0\分机与主机通信20141226-V0.4\节能回收监控\bin\Debug\wyb7led.dll
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20150311-V1.0\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\节能回收监控.csprojResolveAssemblyReference.cache
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20150311-V1.0\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\节能回收监控.csproj.GenerateResource.Cache
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20150311-V1.1\分机与主机通信20141226-V0.4\节能回收监控\bin\Debug\串口通信.exe.config
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20150311-V1.1\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\节能回收监控.csproj.ResolveComReference.cache
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20150311-V1.1\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\串口通信.exe
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20150311-V1.1\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\串口通信.pdb
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20150311-V1.1\分机与主机通信20141226-V0.4\节能回收监控\bin\Debug\串口通信.exe
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20150311-V1.1\分机与主机通信20141226-V0.4\节能回收监控\bin\Debug\串口通信.pdb
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20150311-V1.1\分机与主机通信20141226-V0.4\节能回收监控\bin\Debug\wyb7led.dll
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20150311-V1.1\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\节能回收监控.csprojResolveAssemblyReference.cache
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20150311-V1.1\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\节能回收监控.MonitoringInterface.resources
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20150311-V1.1\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\节能回收监控.Properties.Resources.resources
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20150311-V1.1\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\节能回收监控.SetComPara.resources
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20150311-V1.1\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\节能回收监控.csproj.GenerateResource.Cache
+E:\电源老化车\分机与主机通信20150311-V1.1\分机与主机通信20141226-V0.4\节能回收监控\bin\Debug\串口通信.exe.config
+E:\电源老化车\分机与主机通信20150311-V1.1\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\节能回收监控.csproj.ResolveComReference.cache
+E:\电源老化车\分机与主机通信20150311-V1.1\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\串口通信.exe
+E:\电源老化车\分机与主机通信20150311-V1.1\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\串口通信.pdb
+E:\电源老化车\分机与主机通信20150311-V1.1\分机与主机通信20141226-V0.4\节能回收监控\bin\Debug\串口通信.exe
+E:\电源老化车\分机与主机通信20150311-V1.1\分机与主机通信20141226-V0.4\节能回收监控\bin\Debug\串口通信.pdb
+E:\电源老化车\分机与主机通信20150311-V1.1\分机与主机通信20141226-V0.4\节能回收监控\bin\Debug\wyb7led.dll
+E:\电源老化车\分机与主机通信20150311-V1.1\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\节能回收监控.csprojResolveAssemblyReference.cache
+E:\电源老化车\分机与主机通信20150311-V1.1\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\节能回收监控.MonitoringInterface.resources
+E:\电源老化车\分机与主机通信20150311-V1.1\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\节能回收监控.Properties.Resources.resources
+E:\电源老化车\分机与主机通信20150311-V1.1\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\节能回收监控.SetComPara.resources
+E:\电源老化车\分机与主机通信20150311-V1.1\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\节能回收监控.csproj.GenerateResource.Cache
+E:\电源老化车\分机与主机通信20150311-V1.2\分机与主机通信20141226-V0.4\节能回收监控\bin\Debug\串口通信.exe.config
+E:\电源老化车\分机与主机通信20150311-V1.2\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\节能回收监控.csproj.ResolveComReference.cache
+E:\电源老化车\分机与主机通信20150311-V1.2\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\串口通信.exe
+E:\电源老化车\分机与主机通信20150311-V1.2\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\串口通信.pdb
+E:\电源老化车\分机与主机通信20150311-V1.2\分机与主机通信20141226-V0.4\节能回收监控\bin\Debug\串口通信.exe
+E:\电源老化车\分机与主机通信20150311-V1.2\分机与主机通信20141226-V0.4\节能回收监控\bin\Debug\串口通信.pdb
+E:\电源老化车\分机与主机通信20150311-V1.2\分机与主机通信20141226-V0.4\节能回收监控\bin\Debug\wyb7led.dll
+E:\电源老化车\分机与主机通信20150311-V1.2\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\节能回收监控.csprojResolveAssemblyReference.cache
+E:\电源老化车\分机与主机通信20150311-V1.2\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\节能回收监控.MonitoringInterface.resources
+E:\电源老化车\分机与主机通信20150311-V1.2\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\节能回收监控.Properties.Resources.resources
+E:\电源老化车\分机与主机通信20150311-V1.2\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\节能回收监控.SetComPara.resources
+E:\电源老化车\分机与主机通信20150311-V1.2\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\节能回收监控.csproj.GenerateResource.Cache
+E:\电源老化车\分机与主机通信20150311-V1.3\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\节能回收监控.csproj.ResolveComReference.cache
+E:\电源老化车\分机与主机通信20150311-V1.3\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\串口通信.exe
+E:\电源老化车\分机与主机通信20150311-V1.3\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\串口通信.pdb
+E:\电源老化车\分机与主机通信20150311-V1.3\分机与主机通信20141226-V0.4\节能回收监控\bin\Debug\串口通信.exe
+E:\电源老化车\分机与主机通信20150311-V1.3\分机与主机通信20141226-V0.4\节能回收监控\bin\Debug\串口通信.pdb
+E:\电源老化车\分机与主机通信20150311-V1.3\分机与主机通信20141226-V0.4\节能回收监控\bin\Debug\wyb7led.dll
+E:\电源老化车\分机与主机通信20150311-V1.3\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\节能回收监控.csprojResolveAssemblyReference.cache
+E:\电源老化车\分机与主机通信20150311-V1.3\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\节能回收监控.MonitoringInterface.resources
+E:\电源老化车\分机与主机通信20150311-V1.3\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\节能回收监控.Properties.Resources.resources
+E:\电源老化车\分机与主机通信20150311-V1.3\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\节能回收监控.SetComPara.resources
+E:\电源老化车\分机与主机通信20150311-V1.3\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\节能回收监控.csproj.GenerateResource.Cache
+E:\电源老化车\分机与主机通信20150311-V1.3\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\节能回收监控.ParameterSet.resources
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20150311-V1.3\分机与主机通信20141226-V0.4\节能回收监控\bin\Debug\串口通信.exe
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20150311-V1.3\分机与主机通信20141226-V0.4\节能回收监控\bin\Debug\串口通信.pdb
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20150311-V1.3\分机与主机通信20141226-V0.4\节能回收监控\bin\Debug\wyb7led.dll
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20150311-V1.3\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\节能回收监控.csprojResolveAssemblyReference.cache
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20150311-V1.3\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\节能回收监控.csproj.ResolveComReference.cache
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20150311-V1.3\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\节能回收监控.MonitoringInterface.resources
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20150311-V1.3\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\节能回收监控.Properties.Resources.resources
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20150311-V1.3\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\节能回收监控.ParameterSet.resources
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20150311-V1.3\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\节能回收监控.SetComPara.resources
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20150311-V1.3\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\节能回收监控.csproj.GenerateResource.Cache
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20150311-V1.3\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\串口通信.exe
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20150311-V1.3\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\串口通信.pdb
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20150311-V1.4-添加设置通信\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\节能回收监控.csproj.ResolveComReference.cache
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20150311-V1.4-添加设置通信\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\串口通信.exe
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20150311-V1.4-添加设置通信\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\串口通信.pdb
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20150311-V1.4-添加设置通信\分机与主机通信20141226-V0.4\节能回收监控\bin\Debug\串口通信.exe
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20150311-V1.4-添加设置通信\分机与主机通信20141226-V0.4\节能回收监控\bin\Debug\串口通信.pdb
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20150311-V1.4-添加设置通信\分机与主机通信20141226-V0.4\节能回收监控\bin\Debug\wyb7led.dll
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20150311-V1.4-添加设置通信\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\节能回收监控.csprojResolveAssemblyReference.cache
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20150311-V1.4-添加设置通信\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\节能回收监控.MonitoringInterface.resources
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20150311-V1.4-添加设置通信\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\节能回收监控.Properties.Resources.resources
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20150311-V1.4-添加设置通信\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\节能回收监控.ParameterSet.resources
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20150311-V1.4-添加设置通信\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\节能回收监控.SetComPara.resources
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20150311-V1.4-添加设置通信\分机与主机通信20141226-V0.4\节能回收监控\obj\Debug\节能回收监控.csproj.GenerateResource.Cache
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20150311-V1.4-添加设置通信\节能回收监控\obj\Debug\节能回收监控.csproj.ResolveComReference.cache
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20150311-V1.4-添加设置通信\节能回收监控\obj\Debug\串口通信.exe
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20150311-V1.4-添加设置通信\节能回收监控\obj\Debug\串口通信.pdb
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20150311-V1.4-添加设置通信\节能回收监控\bin\Debug\串口通信.exe
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20150311-V1.4-添加设置通信\节能回收监控\bin\Debug\串口通信.pdb
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20150311-V1.4-添加设置通信\节能回收监控\bin\Debug\wyb7led.dll
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20150311-V1.4-添加设置通信\节能回收监控\obj\Debug\节能回收监控.csprojResolveAssemblyReference.cache
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20150311-V1.4-添加设置通信\节能回收监控\obj\Debug\节能回收监控.MonitoringInterface.resources
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20150311-V1.4-添加设置通信\节能回收监控\obj\Debug\节能回收监控.Properties.Resources.resources
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20150311-V1.4-添加设置通信\节能回收监控\obj\Debug\节能回收监控.ParameterSet.resources
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20150311-V1.4-添加设置通信\节能回收监控\obj\Debug\节能回收监控.SetComPara.resources
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20150311-V1.4-添加设置通信\节能回收监控\obj\Debug\节能回收监控.csproj.GenerateResource.Cache
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20150311-V1.4-添加设置通信\节能回收监控\obj\Debug\节能回收监控.窗体文件.OnOffSet.resources
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20150601-V1.5\节能回收监控\obj\Debug\节能回收监控.csproj.ResolveComReference.cache
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20150601-V1.5\节能回收监控\obj\Debug\串口通信.exe
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20150601-V1.5\节能回收监控\obj\Debug\串口通信.pdb
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20150601-V1.5\节能回收监控\bin\Debug\串口通信.exe
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20150601-V1.5\节能回收监控\bin\Debug\串口通信.pdb
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20150601-V1.5\节能回收监控\bin\Debug\wyb7led.dll
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20150601-V1.5\节能回收监控\obj\Debug\节能回收监控.csprojResolveAssemblyReference.cache
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20150601-V1.5\节能回收监控\obj\Debug\节能回收监控.MonitoringInterface.resources
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20150601-V1.5\节能回收监控\obj\Debug\节能回收监控.Properties.Resources.resources
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20150601-V1.5\节能回收监控\obj\Debug\节能回收监控.窗体文件.OnOffSet.resources
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20150601-V1.5\节能回收监控\obj\Debug\节能回收监控.ParameterSet.resources
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20150601-V1.5\节能回收监控\obj\Debug\节能回收监控.SetComPara.resources
+F:\(4) 电能回收式老化车\（1）上位机监控\From FGS\分机与主机通信20150601-V1.5\节能回收监控\obj\Debug\节能回收监控.csproj.GenerateResource.Cache
+F:\(4) 开关电源老化车\（1）上位机监控\C#上位机监控程序\分机与主机通信20150601-V1.5\节能回收监控\obj\Debug\节能回收监控.csproj.ResolveComReference.cache
+F:\(4) 开关电源老化车\（1）上位机监控\C#上位机监控程序\分机与主机通信20150601-V1.5\节能回收监控\obj\Debug\串口通信.exe
+F:\(4) 开关电源老化车\（1）上位机监控\C#上位机监控程序\分机与主机通信20150601-V1.5\节能回收监控\obj\Debug\串口通信.pdb
+F:\(4) 开关电源老化车\（1）上位机监控\C#上位机监控程序\分机与主机通信20150822-V1.5\节能回收监控\obj\Debug\节能回收监控.csproj.ResolveComReference.cache
+F:\(4) 开关电源老化车\（1）上位机监控\C#上位机监控程序\分机与主机通信20150822-V1.5\节能回收监控\obj\Debug\串口通信.exe
+F:\(4) 开关电源老化车\（1）上位机监控\C#上位机监控程序\分机与主机通信20150822-V1.5\节能回收监控\obj\Debug\串口通信.pdb
+F:\(4) 开关电源老化车\（1）上位机监控\C#上位机监控程序\分机与主机通信20150822-V1.5\节能回收监控\bin\Debug\串口通信.exe
+F:\(4) 开关电源老化车\（1）上位机监控\C#上位机监控程序\分机与主机通信20150822-V1.5\节能回收监控\bin\Debug\串口通信.pdb
+F:\(4) 开关电源老化车\（1）上位机监控\C#上位机监控程序\分机与主机通信20150822-V1.5\节能回收监控\bin\Debug\wyb7led.dll
+F:\(4) 开关电源老化车\（1）上位机监控\C#上位机监控程序\分机与主机通信20150822-V1.5\节能回收监控\obj\Debug\节能回收监控.csprojResolveAssemblyReference.cache
+F:\(4) 开关电源老化车\（1）上位机监控\C#上位机监控程序\分机与主机通信20150822-V1.5\节能回收监控\obj\Debug\节能回收监控.MonitoringInterface.resources
+F:\(4) 开关电源老化车\（1）上位机监控\C#上位机监控程序\分机与主机通信20150822-V1.5\节能回收监控\obj\Debug\节能回收监控.Properties.Resources.resources
+F:\(4) 开关电源老化车\（1）上位机监控\C#上位机监控程序\分机与主机通信20150822-V1.5\节能回收监控\obj\Debug\节能回收监控.窗体文件.OnOffSet.resources
+F:\(4) 开关电源老化车\（1）上位机监控\C#上位机监控程序\分机与主机通信20150822-V1.5\节能回收监控\obj\Debug\节能回收监控.ParameterSet.resources
+F:\(4) 开关电源老化车\（1）上位机监控\C#上位机监控程序\分机与主机通信20150822-V1.5\节能回收监控\obj\Debug\节能回收监控.SetComPara.resources
+F:\(4) 开关电源老化车\（1）上位机监控\C#上位机监控程序\分机与主机通信20150822-V1.5\节能回收监控\obj\Debug\节能回收监控.csproj.GenerateResource.Cache
+F:\(4) 开关电源老化车\（1）上位机监控\C#上位机监控程序\分机与主机通信20150823-V1.5\节能回收监控\obj\Debug\节能回收监控.csproj.ResolveComReference.cache
+F:\(4) 开关电源老化车\（1）上位机监控\C#上位机监控程序\分机与主机通信20150823-V1.5\节能回收监控\obj\Debug\串口通信.exe
+F:\(4) 开关电源老化车\（1）上位机监控\C#上位机监控程序\分机与主机通信20150823-V1.5\节能回收监控\obj\Debug\串口通信.pdb
+F:\(4) 开关电源老化车\（1）上位机监控\C#上位机监控程序\分机与主机通信20150823-V1.5\节能回收监控\bin\Debug\串口通信.exe
+F:\(4) 开关电源老化车\（1）上位机监控\C#上位机监控程序\分机与主机通信20150823-V1.5\节能回收监控\bin\Debug\串口通信.pdb
+F:\(4) 开关电源老化车\（1）上位机监控\C#上位机监控程序\分机与主机通信20150823-V1.5\节能回收监控\bin\Debug\wyb7led.dll
+F:\(4) 开关电源老化车\（1）上位机监控\C#上位机监控程序\分机与主机通信20150823-V1.5\节能回收监控\obj\Debug\节能回收监控.csprojResolveAssemblyReference.cache
+F:\(4) 开关电源老化车\（1）上位机监控\C#上位机监控程序\分机与主机通信20150823-V1.5\节能回收监控\obj\Debug\节能回收监控.MonitoringInterface.resources
+F:\(4) 开关电源老化车\（1）上位机监控\C#上位机监控程序\分机与主机通信20150823-V1.5\节能回收监控\obj\Debug\节能回收监控.Properties.Resources.resources
+F:\(4) 开关电源老化车\（1）上位机监控\C#上位机监控程序\分机与主机通信20150823-V1.5\节能回收监控\obj\Debug\节能回收监控.窗体文件.OnOffSet.resources
+F:\(4) 开关电源老化车\（1）上位机监控\C#上位机监控程序\分机与主机通信20150823-V1.5\节能回收监控\obj\Debug\节能回收监控.ParameterSet.resources
+F:\(4) 开关电源老化车\（1）上位机监控\C#上位机监控程序\分机与主机通信20150823-V1.5\节能回收监控\obj\Debug\节能回收监控.SetComPara.resources
+F:\(4) 开关电源老化车\（1）上位机监控\C#上位机监控程序\分机与主机通信20150823-V1.5\节能回收监控\obj\Debug\节能回收监控.csproj.GenerateResource.Cache
+F:\(4) 开关电源老化车\（1）上位机监控\C#上位机监控程序\分机与主机通信20150831-V1.5\节能回收监控\obj\Debug\节能回收监控.csproj.ResolveComReference.cache
+F:\(4) 开关电源老化车\（1）上位机监控\C#上位机监控程序\分机与主机通信20150831-V1.5\节能回收监控\obj\Debug\串口通信.exe
+F:\(4) 开关电源老化车\（1）上位机监控\C#上位机监控程序\分机与主机通信20150831-V1.5\节能回收监控\obj\Debug\串口通信.pdb
+F:\(4) 开关电源老化车\（1）上位机监控\C#上位机监控程序\分机与主机通信20150831-V1.5\节能回收监控\bin\Debug\串口通信.exe
+F:\(4) 开关电源老化车\（1）上位机监控\C#上位机监控程序\分机与主机通信20150831-V1.5\节能回收监控\bin\Debug\串口通信.pdb
+F:\(4) 开关电源老化车\（1）上位机监控\C#上位机监控程序\分机与主机通信20150831-V1.5\节能回收监控\bin\Debug\wyb7led.dll
+F:\(4) 开关电源老化车\（1）上位机监控\C#上位机监控程序\分机与主机通信20150831-V1.5\节能回收监控\obj\Debug\节能回收监控.csprojResolveAssemblyReference.cache
+F:\(4) 开关电源老化车\（1）上位机监控\C#上位机监控程序\分机与主机通信20150831-V1.5\节能回收监控\obj\Debug\节能回收监控.MonitoringInterface.resources
+F:\(4) 开关电源老化车\（1）上位机监控\C#上位机监控程序\分机与主机通信20150831-V1.5\节能回收监控\obj\Debug\节能回收监控.Properties.Resources.resources
+F:\(4) 开关电源老化车\（1）上位机监控\C#上位机监控程序\分机与主机通信20150831-V1.5\节能回收监控\obj\Debug\节能回收监控.窗体文件.OnOffSet.resources
+F:\(4) 开关电源老化车\（1）上位机监控\C#上位机监控程序\分机与主机通信20150831-V1.5\节能回收监控\obj\Debug\节能回收监控.ParameterSet.resources
+F:\(4) 开关电源老化车\（1）上位机监控\C#上位机监控程序\分机与主机通信20150831-V1.5\节能回收监控\obj\Debug\节能回收监控.SetComPara.resources
+F:\(4) 开关电源老化车\（1）上位机监控\C#上位机监控程序\分机与主机通信20150831-V1.5\节能回收监控\obj\Debug\节能回收监控.csproj.GenerateResource.Cache
+F:\(4) 开关电源老化车\（1）上位机监控\C#上位机监控程序\分机与主机通信20150903-V1.5\节能回收监控\obj\Debug\节能回收监控.csproj.ResolveComReference.cache
+F:\(4) 开关电源老化车\（1）上位机监控\C#上位机监控程序\分机与主机通信20150903-V1.5\节能回收监控\obj\Debug\串口通信.exe
+F:\(4) 开关电源老化车\（1）上位机监控\C#上位机监控程序\分机与主机通信20150903-V1.5\节能回收监控\obj\Debug\串口通信.pdb
+F:\(4) 开关电源老化车\（1）上位机监控\C#上位机监控程序\分机与主机通信20150903-V1.5\节能回收监控\bin\Debug\串口通信.exe
+F:\(4) 开关电源老化车\（1）上位机监控\C#上位机监控程序\分机与主机通信20150903-V1.5\节能回收监控\bin\Debug\串口通信.pdb
+F:\(4) 开关电源老化车\（1）上位机监控\C#上位机监控程序\分机与主机通信20150903-V1.5\节能回收监控\bin\Debug\wyb7led.dll
+F:\(4) 开关电源老化车\（1）上位机监控\C#上位机监控程序\分机与主机通信20150903-V1.5\节能回收监控\obj\Debug\节能回收监控.csprojResolveAssemblyReference.cache
+F:\(4) 开关电源老化车\（1）上位机监控\C#上位机监控程序\分机与主机通信20150903-V1.5\节能回收监控\obj\Debug\节能回收监控.MonitoringInterface.resources
+F:\(4) 开关电源老化车\（1）上位机监控\C#上位机监控程序\分机与主机通信20150903-V1.5\节能回收监控\obj\Debug\节能回收监控.Properties.Resources.resources
+F:\(4) 开关电源老化车\（1）上位机监控\C#上位机监控程序\分机与主机通信20150903-V1.5\节能回收监控\obj\Debug\节能回收监控.窗体文件.OnOffSet.resources
+F:\(4) 开关电源老化车\（1）上位机监控\C#上位机监控程序\分机与主机通信20150903-V1.5\节能回收监控\obj\Debug\节能回收监控.ParameterSet.resources
+F:\(4) 开关电源老化车\（1）上位机监控\C#上位机监控程序\分机与主机通信20150903-V1.5\节能回收监控\obj\Debug\节能回收监控.SetComPara.resources
+F:\(4) 开关电源老化车\（1）上位机监控\C#上位机监控程序\分机与主机通信20150903-V1.5\节能回收监控\obj\Debug\节能回收监控.csproj.GenerateResource.Cache
+F:\(4) 开关电源老化车\（1）上位机监控\C#上位机监控程序\分机与主机通信20150903-V1.5\节能回收监控\obj\Debug\节能回收监控.窗体文件.UserLoin.resources
+F:\(4) 开关电源老化车\（1）上位机监控\C#上位机监控程序\分机与主机通信20150903-V1.5\节能回收监控\obj\Debug\节能回收监控.窗体文件.UserInformChg.resources
+F:\(4) 开关电源老化车\（1）上位机监控\C#上位机监控程序\分机与主机通信20150914-V1.5\节能回收监控\obj\Debug\节能回收监控.csproj.ResolveComReference.cache
+F:\(4) 开关电源老化车\（1）上位机监控\C#上位机监控程序\分机与主机通信20150914-V1.5\节能回收监控\obj\Debug\串口通信.exe
+F:\(4) 开关电源老化车\（1）上位机监控\C#上位机监控程序\分机与主机通信20150914-V1.5\节能回收监控\obj\Debug\串口通信.pdb
+F:\(4) 开关电源老化车\（1）上位机监控\C#上位机监控程序\分机与主机通信20150914-V1.5\节能回收监控\bin\Debug\串口通信.exe
+F:\(4) 开关电源老化车\（1）上位机监控\C#上位机监控程序\分机与主机通信20150914-V1.5\节能回收监控\bin\Debug\串口通信.pdb
+F:\(4) 开关电源老化车\（1）上位机监控\C#上位机监控程序\分机与主机通信20150914-V1.5\节能回收监控\bin\Debug\wyb7led.dll
+F:\(4) 开关电源老化车\（1）上位机监控\C#上位机监控程序\分机与主机通信20150914-V1.5\节能回收监控\obj\Debug\节能回收监控.csprojResolveAssemblyReference.cache
+F:\(4) 开关电源老化车\（1）上位机监控\C#上位机监控程序\分机与主机通信20150914-V1.5\节能回收监控\obj\Debug\节能回收监控.MonitoringInterface.resources
+F:\(4) 开关电源老化车\（1）上位机监控\C#上位机监控程序\分机与主机通信20150914-V1.5\节能回收监控\obj\Debug\节能回收监控.Properties.Resources.resources
+F:\(4) 开关电源老化车\（1）上位机监控\C#上位机监控程序\分机与主机通信20150914-V1.5\节能回收监控\obj\Debug\节能回收监控.窗体文件.OnOffSet.resources
+F:\(4) 开关电源老化车\（1）上位机监控\C#上位机监控程序\分机与主机通信20150914-V1.5\节能回收监控\obj\Debug\节能回收监控.ParameterSet.resources
+F:\(4) 开关电源老化车\（1）上位机监控\C#上位机监控程序\分机与主机通信20150914-V1.5\节能回收监控\obj\Debug\节能回收监控.SetComPara.resources
+F:\(4) 开关电源老化车\（1）上位机监控\C#上位机监控程序\分机与主机通信20150914-V1.5\节能回收监控\obj\Debug\节能回收监控.窗体文件.UserInformChg.resources
+F:\(4) 开关电源老化车\（1）上位机监控\C#上位机监控程序\分机与主机通信20150914-V1.5\节能回收监控\obj\Debug\节能回收监控.窗体文件.UserLoin.resources
+F:\(4) 开关电源老化车\（1）上位机监控\C#上位机监控程序\分机与主机通信20150914-V1.5\节能回收监控\obj\Debug\节能回收监控.csproj.GenerateResource.Cache
+D:\充电桩\20150914-V1.5\分机与主机通信20150914-V1.5\节能回收监控\obj\Debug\节能回收监控.csproj.ResolveComReference.cache
+D:\充电桩\20150914-V1.5\分机与主机通信20150914-V1.5\节能回收监控\obj\Debug\串口通信.exe
+D:\充电桩\20150914-V1.5\分机与主机通信20150914-V1.5\节能回收监控\obj\Debug\串口通信.pdb
+D:\充电桩\充电桩C#模拟程序\服务器模拟器20160425-V0.0\节能回收监控\obj\Debug\节能回收监控.csproj.ResolveComReference.cache
+D:\充电桩\充电桩C#模拟程序\服务器模拟器20160425-V0.0\节能回收监控\obj\Debug\串口通信.exe
+D:\充电桩\充电桩C#模拟程序\服务器模拟器20160425-V0.0\节能回收监控\obj\Debug\串口通信.pdb

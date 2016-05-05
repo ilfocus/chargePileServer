@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ChargingPileServer.Classes.CPBackDataParse" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAgAAIAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAQEA=</HashCode>
+      <FileName>Classes\Class1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ChargingPileServer.Classes.CPGetHeartFrame" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Class1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ChargingPileServer.Classes.CPGetSetTime" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Class1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ChargingPileServer.Classes.CPGetSetRate" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Class1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ChargingPileServer.Classes.CPGetState" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAgAAAAAIAAAAEAAAQAAAAIgEQgQAAACAIQAAA=</HashCode>
+      <FileName>Classes\Class1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ChargingPileServer.Classes.CPGetStartup" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Class1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ChargingPileServer.Classes.CPGetCurInfo" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EgAAAAQQAgAAAAAEAAAACAAIBAAAECAAAAAQAAAACAA=</HashCode>
+      <FileName>Classes\Class1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="微软雅黑" Size="9" />
+</ClassDiagram>
