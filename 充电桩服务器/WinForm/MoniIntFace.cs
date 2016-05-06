@@ -11,15 +11,16 @@ using System.Data.OleDb;    // 数据库对象
 using System.Collections;
 using System.Reflection;    // missing.values
 using System.IO;            //File.Exists
+
 using ChargingPileServer.Properties;
 using ChargingPileServer.WinForm;
+
 using ZedGraph;
 
 // Socket监听类
 using System.Net.Sockets;
 using System.Net;
 using System.Threading;
-
 
 //using ChargingPileServer.Classes;
 using Microsoft.Office.Core;
@@ -45,12 +46,13 @@ namespace ChargingPileServer
         private List<System.Windows.Forms.Label[]> subMachineErrorStatusList = new List<System.Windows.Forms.Label[]>();
 
         private List<MainDevice> mainDev = new List<MainDevice>();// 创建主机对象集合
+        
+        private List<ChargePileDevice> cpDevice = new List<ChargePileDevice>(); // creat charge pile object collection
 
         Queue receiveByteQueue = Queue.Synchronized(new Queue());//线程安全的数据队列，用来中转串口来的数据
 
         PointPairList curAList = new PointPairList();
         PointPairList curBList = new PointPairList();
-
         LineItem curACurve;
         LineItem curBCurve;
 
@@ -294,6 +296,17 @@ namespace ChargingPileServer
             //btn.Width = 40;
             //btn.Location = new Point(100, 100);
             //this.Controls.Add(btn);
+
+            // 加入这行,容许跨线程访问控件
+            Control.CheckForIllegalCrossThreadCalls = false;
+
+            string name = "测试充电桩";
+            foreach (TreeNode node in tvChargePile.Nodes) {
+                if (node.Name != name) {
+                    node.Nodes.Add(new TreeNode(name));
+                    tvChargePile.ExpandAll();
+                }
+            }
 
         }
         
@@ -727,6 +740,7 @@ namespace ChargingPileServer
 
         private bool checkStateFlg = true;
         private bool chargeInfoFlg = true;
+        
 
         private void timeDealRevData_Tick(object sender, EventArgs e)   // 处理接收到的数据
         {
@@ -734,12 +748,8 @@ namespace ChargingPileServer
                 blDataFlag = false;
 
                 int count = receiveByteQueue.Count;
-
                 byte[] arr = (byte[])receiveByteQueue.Dequeue();//通过队列收到数据
-
-
                 CPBackDataParse dataParser = new CPBackDataParse();
-
                 dataParser = dataParser.packageParser(arr, arr.Length);
 
                 if (dataParser.classType == CPBackDataParse.BackDataType.HeartFrameType) {
@@ -907,7 +917,7 @@ namespace ChargingPileServer
                         chargeInfoFlg = true;
 
                         if (btnCheckChargeInfo.Text == "停止查看") {
-                            chargeInfoTime.Enabled = true;
+                            //chargeInfoTime.Enabled = true;
                         }
                         
                     } else {
@@ -928,30 +938,40 @@ namespace ChargingPileServer
                 UInt64 temp = Convert.ToUInt64(txtChargingPileAddress.Text);
 
                 byte[] sendData = sendDataPack.sendDataPackage(cmdCode,temp);
-                serverSocket.Send(sendData, sendData.Length, 0);
+                //serverSocket.Send(sendData, sendData.Length, 0);
                 if (true == serialPort1.IsOpen) {
                     serialPort1.Write(sendData, 0, sendData.Length);
                 }
-                //} else {
-                //    MessageBox.Show("串口未打开，请打开串口");
-                //}
+                if (btnListen.Text == "关闭监听") {
+                    // 打开了监听
+                    UInt64 address = Convert.ToUInt64(txtChargingPileAddress.Text);
+                    for (int i = 0; i < cpDevice.Count; i++) {
+                        if (cpDevice[i].chargePileMachineAddress == address) {
+                            cpDevice[i].clientSocket.Send(sendData, sendData.Length, 0);
+                        }
+                    }
+                }
             } else {
 
                 byte[] sendData = sendDataPack.sendDataPackage(cmdCode);
                 //Socket clientSocket = serverSocket.Accept();
-                clientSocket.Send(sendData, sendData.Length, 0);
+                //clientSocket.Send(sendData, sendData.Length, 0);
                 if (true == serialPort1.IsOpen) {
                     serialPort1.Write(sendData, 0, sendData.Length);
                 }
-                //else {
-                //    MessageBox.Show("串口未打开，请打开串口");
-                //}
+                if (btnListen.Text == "关闭监听") {
+                    // 打开了监听
+                    UInt64 address = 0x1122334455667788;
+                    for (int i = 0; i < cpDevice.Count; i++) {
+                        if (cpDevice[i].chargePileMachineAddress == address) {
+                            cpDevice[i].clientSocket.Send(sendData, sendData.Length, 0);
+                        }
+                    }
+                }
             }
             
         }
-        private void updateFrameTimer_Tick(object sender, EventArgs e) {
-            Random ran = new Random();
-        } 
+         
         
         private void treeView1_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e) {
         }
@@ -1045,17 +1065,35 @@ namespace ChargingPileServer
             if (txtChargingPileAddress.Text != "") {
                 UInt64 temp = Convert.ToUInt64(txtChargingPileAddress.Text);
                 byte[] sendData = sendDataPack.sendTimeDataPackage(cmdCode, sendTimeData,temp);
+
                 if (true == serialPort1.IsOpen) {
                     serialPort1.Write(sendData, 0, sendData.Length);
-                } else {
-                    MessageBox.Show("串口未打开，请打开串口");
                 }
+
+                if (btnListen.Text == "关闭监听") {
+                    // 打开了监听
+                    UInt64 address = Convert.ToUInt64(txtChargingPileAddress.Text);
+                    for (int i = 0; i < cpDevice.Count; i++) {
+                        if (cpDevice[i].chargePileMachineAddress == address) {
+                            cpDevice[i].clientSocket.Send(sendData,sendData.Length,0);
+                        }
+                    }
+                }
+
+
             } else {
                 byte[] sendData = sendDataPack.sendTimeDataPackage(cmdCode, sendTimeData);
                 if (true == serialPort1.IsOpen) {
                     serialPort1.Write(sendData, 0, sendData.Length);
-                } else {
-                    MessageBox.Show("串口未打开，请打开串口");
+                }
+                if (btnListen.Text == "关闭监听") {
+                    // 打开了监听
+                    UInt64 address = 0x1122334455667788;
+                    for (int i = 0; i < cpDevice.Count; i++) {
+                        if (cpDevice[i].chargePileMachineAddress == address) {
+                            cpDevice[i].clientSocket.Send(sendData, sendData.Length, 0);
+                        }
+                    }
                 }
             }
 
@@ -1088,7 +1126,8 @@ namespace ChargingPileServer
                 return;
             }
             
-
+            
+            
             CPSendDataPackage sendDataPack = new CPSendDataPackage();
 
             CPSetSendDataRate sendRataData = new CPSetSendDataRate();
@@ -1107,17 +1146,31 @@ namespace ChargingPileServer
                 if (true == serialPort1.IsOpen) {
 
                     serialPort1.Write(sendData, 0, sendData.Length);
-
-                } else {
-                    MessageBox.Show("串口未打开，请打开串口");
+                }
+                if (btnListen.Text == "关闭监听") {
+                    // 打开了监听
+                    UInt64 address = Convert.ToUInt64(txtChargingPileAddress.Text);
+                    for (int i = 0; i < cpDevice.Count; i++) {
+                        if (cpDevice[i].chargePileMachineAddress == address) {
+                            cpDevice[i].clientSocket.Send(sendData, sendData.Length, 0);
+                        }
+                    }
                 }
             } else {
                 byte[] sendData = sendDataPack.sendRateDataPackage(cmdCode, sendRataData);
                 if (true == serialPort1.IsOpen) {
                     serialPort1.Write(sendData, 0, sendData.Length);
-                } else {
-                    MessageBox.Show("串口未打开，请打开串口");
                 }
+                if (btnListen.Text == "关闭监听") {
+                    // 打开了监听
+                    UInt64 address = 0x1122334455667788;
+                    for (int i = 0; i < cpDevice.Count; i++) {
+                        if (cpDevice[i].chargePileMachineAddress == address) {
+                            cpDevice[i].clientSocket.Send(sendData, sendData.Length, 0);
+                        }
+                    }
+                }
+
             }
 
             
@@ -1323,27 +1376,7 @@ namespace ChargingPileServer
 
         }
         private uint chargeInfoErrorCnt = 0;
-        private void chargeInfoTime_Tick(object sender, EventArgs e) {
-            //if (false == serialPort1.IsOpen) {
-            //    chargeInfoTime.Enabled = false;
-            //    btnCheckChargeInfo.Text = "自动查看";
-            //    return;
-            //}
-            //if (false == chargeInfoFlg) {
-            //    chargeInfoErrorCnt++;
-            //    if (chargeInfoErrorCnt > 2) {
-            //        chargeInfoFlg = true;
-            //        chargeInfoErrorCnt = 0;
-            //    }
-            //} else {
-            //    chargeInfoErrorCnt = 0;
-            //}
-
-            //if (chargeInfoFlg) {
-            //    sendCurChargeData(0x25);
-            //    chargeInfoFlg = false;
-            //}
-        }
+ 
         static bool ledStateFlg = true;
         private void heartLedTime_Tick(object sender, EventArgs e) {
 
@@ -1360,18 +1393,18 @@ namespace ChargingPileServer
             
         }
 
-
+        #region scoket listen
         private static byte[] result = new byte[1024];
         private static int myProt = 8885;   //端口
         static Socket serverSocket;
+        static Socket clientSocket;
         private void btnListen_Click(object sender, EventArgs e) {
-
             if (btnListen.Text == "打开监听") {
                 btnListen.Text = "关闭监听";
                 IPAddress ip = IPAddress.Parse("127.0.0.1");
                 serverSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
                 serverSocket.Bind(new IPEndPoint(ip, myProt));  //绑定IP地址：端口
-                serverSocket.Listen(100);    //设定最多10个排队连接请求
+                serverSocket.Listen(100);    //设定最多100个排队连接请求
                 // 通过Clientsoket发送数据
                 Thread myThread = new Thread(ListenClientConnect);
                 myThread.Start();
@@ -1379,37 +1412,258 @@ namespace ChargingPileServer
             } else {
                 btnListen.Text = "打开监听";
             }
+            
         }
         /// <summary>
         /// 监听客户端连接
         /// </summary>
-        static Socket clientSocket;
-        private static void ListenClientConnect() {
+        private void ListenClientConnect() {
             while (true) {
                 clientSocket = serverSocket.Accept();
-               // Console.WriteLine("I just set the following properties of socket: " + "Address Family = " + clientSocket.AddressFamily.ToString() + "\nSocketType = " + clientSocket.SocketType.ToString() + "\nProtocolType = " + clientSocket.ProtocolType.ToString());
+
                 IPAddress ip = ((System.Net.IPEndPoint)clientSocket.RemoteEndPoint).Address;
                 int port = ((System.Net.IPEndPoint)clientSocket.RemoteEndPoint).Port;
+
                 Console.WriteLine("我是服务器，检测到的客户端ip是：" + ip);
                 Console.WriteLine("端口号是：" + port);
-                clientSocket.Send(Encoding.ASCII.GetBytes("123456789"));
+
+                
 
                 Thread receiveThread = new Thread(ReceiveMessage);
                 receiveThread.Start(clientSocket);
             }
         }
+
+        private bool updataDeviceList(ChargePileDevice newDevice) {
+            for (int i = 0; i < cpDevice.Count; i++) {
+                if (newDevice.chargePileMachineAddress == cpDevice[i].chargePileMachineAddress) {
+                    cpDevice[i] = newDevice;
+                    return true;
+                }
+            }
+            return false;
+        }
+        private void updateFrameTimer_Tick(object sender, EventArgs e) {
+
+            //for (int i = 0; i < cpDevice.Count; i++) {
+            //    string name = cpDevice[i].chargePileMachineAddress.ToString() + "充电桩";
+            //    if (cpDevice[i].chargePileMachineAddress == 0x1122334455667788) {
+            //        name = "默认充电桩";
+            //    }
+            //    foreach (TreeNode node in tvChargePile.Nodes) {
+            //        if (node.Name == name) {
+            //            return;
+            //        }
+                    
+            //    }
+            //    //TreeNode tvnode = new TreeNode();
+            //    //node.Nodes.Add(new TreeNode(name));
+            //    tvChargePile.Nodes.Add(new TreeNode(name));
+            //    //tvChargePile.ExpandAll();
+            //}
+
+            
+        }
         /// <summary>
         /// 接收消息
         /// </summary>
         /// <param name="clientSocket"></param>
-        
-        private static void ReceiveMessage(object clientSocket) {
+        private void ReceiveMessage(object clientSocket) {
             Socket myClientSocket = (Socket)clientSocket;
             while (true) {
                 try {
                     // 通过clientSocket接收数据
                     int receiveNumber = myClientSocket.Receive(result);
-                    Console.WriteLine("接收客户端{0}消息{1}", myClientSocket.RemoteEndPoint.ToString(), Encoding.ASCII.GetString(result, 0, receiveNumber));
+
+                    byte[] tempArray = new byte[receiveNumber];
+
+                    for (int i = 0; i < receiveNumber; i++) {
+                        tempArray[i] = result[i];
+                    }
+
+                    CPBackDataParse dataParser = new CPBackDataParse();
+                    dataParser = dataParser.packageParser(tempArray, receiveNumber);
+
+                    if (dataParser != null) {
+                        ChargePileDevice device = new ChargePileDevice();
+
+                        device.chargePileData = dataParser;
+                        device.isActive = true;
+                        device.chargePileIPAddress = ((System.Net.IPEndPoint)myClientSocket.RemoteEndPoint).Address;
+                        device.chargePilePort = ((System.Net.IPEndPoint)myClientSocket.RemoteEndPoint).Port;
+                        device.chargePileMachineAddress = dataParser.cpAddress;
+                        device.clientSocket = myClientSocket;
+                        if (false == updataDeviceList(device)) {
+                            cpDevice.Add(device);
+                        }
+                        
+
+
+                    }
+                    if (dataParser.classType == CPBackDataParse.BackDataType.HeartFrameType) {
+                        Console.WriteLine("class type is heartFrame!");
+                        if (dataParser.cpGetHeartData.cpHeartFrameExecuteResult == true) {
+                            Console.WriteLine("receive Charging pile heart frame command success.\n");
+                            //heartStateLed.ForeColor = Color.Green;
+                            heartLedTime.Enabled = true;
+                        } else {
+                            Console.WriteLine("receive Charging pile heart frame command fail.\n");
+                            heartStateLed.ForeColor = Color.Red;
+                            picBox1.Image = Resources.red;
+                            heartLedTime.Enabled = false;
+                        }
+                    }
+
+                    if (dataParser.classType == CPBackDataParse.BackDataType.SetTimeType) {
+                        if (dataParser.cpGetTimeData.cpSetTimeExecuteResult == true) {
+                            Console.WriteLine("receive set time command success.\n");
+                            setTimeLed.ForeColor = Color.Green;
+                        } else {
+                            Console.WriteLine("receive set time command fail.\n");
+                            setTimeLed.ForeColor = Color.Red;
+                        }
+                    }
+
+                    if (dataParser.classType == CPBackDataParse.BackDataType.SetRateType) {
+                        if (dataParser.cpGetRateData.cpSetRateExecuteResult == true) {
+                            Console.WriteLine("receive set rate command success.\n");
+                            setRateLed.ForeColor = Color.Green;
+                        } else {
+                            Console.WriteLine("receive set rate command fail.\n");
+                            setRateLed.ForeColor = Color.Red;
+                        }
+                    }
+                    if (dataParser.classType == CPBackDataParse.BackDataType.StateType) {
+
+                        if (dataParser.cpGetStateData.cpGetStateExecuteResult == true) {
+                            Console.WriteLine("receive charging pile state command success.\n");
+                            cpStateLed.ForeColor = Color.Green;
+                            // deal parameter message
+                            txtValtage.Text = dataParser.dealParaChange(dataParser.cpGetStateData.cpVoltage);
+                            txtCurrent.Text = dataParser.dealParaChange(dataParser.cpGetStateData.cpCurrent);
+
+                            txtTotalElect.Text = dataParser.dealParaChange(dataParser.cpGetStateData.cpTotalElect);
+                            txtPointElect.Text = dataParser.dealParaChange(dataParser.cpGetStateData.cpPointElect);
+                            txtPeakElect.Text = dataParser.dealParaChange(dataParser.cpGetStateData.cpPeakElect);
+                            txtFlatElect.Text = dataParser.dealParaChange(dataParser.cpGetStateData.cpFlatElect);
+                            txtValleyElect.Text = dataParser.dealParaChange(dataParser.cpGetStateData.cpValleyElect);
+
+                            txtChargeSoc.Text = dataParser.cpGetStateData.cpSpace1.ToString();
+                            txtChargeTime.Text = dataParser.cpGetStateData.cpSpace2.ToString();
+                            txtLeftTime.Text = dataParser.cpGetStateData.cpSpace3.ToString();
+
+                            if (dataParser.cpGetStateData.cpEmergencyBtn == 0x00) {
+                                lblStopLed.ForeColor = Color.Green;
+                                lblStopState.Text = "正常";
+                            } else {
+                                lblStopLed.ForeColor = Color.Red;
+                                lblStopState.Text = "按下";
+                            }
+
+                            if (dataParser.cpGetStateData.cpMeterState == 0x00) {
+                                lblElectLed.ForeColor = Color.Green;
+                                lblElectState.Text = "通信正常";
+                            } else {
+                                lblElectLed.ForeColor = Color.Red;
+                                lblElectState.Text = "通信异常";
+                            }
+
+                            if (dataParser.cpGetStateData.cpChargePlug == 0x00) {
+                                lblPlugLed.ForeColor = Color.Green;
+                                lblPlugState.Text = "插好";
+                            } else {
+                                lblPlugLed.ForeColor = Color.Red;
+                                lblPlugState.Text = "没准备好";
+                            }
+
+                            if (dataParser.cpGetStateData.cpCurrentState == 0x00) {
+                                lblCurLed.ForeColor = Color.Green;
+                                lblCurState.Text = "有输出";
+                            } else {
+                                lblCurLed.ForeColor = Color.Red;
+                                lblCurState.Text = "无输出";
+                            }
+                        } else {
+                            Console.WriteLine("receive charging pile state command fail.\n");
+                            cpStateLed.ForeColor = Color.Red;
+                        }
+                    }
+                    if (dataParser.classType == CPBackDataParse.BackDataType.StartupType) {
+
+                        if (dataParser.cpGetStartupData.cpControlExecuteResult == true) {
+                            Console.WriteLine("receive charging pile start and stop command success.\n");
+                            cpStartLed.ForeColor = Color.Gray;
+                            cpPauseLed.ForeColor = Color.Gray;
+                            cpRecoverLed.ForeColor = Color.Gray;
+                            cpStopLed.ForeColor = Color.Gray;
+                            if (dataParser.cpGetStartupData.cpWorkState == CPGetStartup.CP_WORK_STATE.cpStartWork) {
+                                cpStartLed.ForeColor = Color.Green;
+                            } else if (dataParser.cpGetStartupData.cpWorkState == CPGetStartup.CP_WORK_STATE.cpPauseWork) {
+                                cpPauseLed.ForeColor = Color.Green;
+                            } else if (dataParser.cpGetStartupData.cpWorkState == CPGetStartup.CP_WORK_STATE.cpStopWork) {
+                                cpStopLed.ForeColor = Color.Green;
+                            } else if (dataParser.cpGetStartupData.cpWorkState == CPGetStartup.CP_WORK_STATE.cpRecoverWork) {
+                                cpRecoverLed.ForeColor = Color.Green;
+                            }
+
+                        } else {
+                            Console.WriteLine("receive charging pile start and stop command fail.\n");
+                            cpStartLed.ForeColor = Color.Gray;
+                            cpPauseLed.ForeColor = Color.Gray;
+                            cpRecoverLed.ForeColor = Color.Gray;
+                            cpStopLed.ForeColor = Color.Gray;
+                            if (dataParser.cpGetStartupData.cpWorkState == CPGetStartup.CP_WORK_STATE.cpStartWork) {
+                                cpStartLed.ForeColor = Color.Red;
+                            } else if (dataParser.cpGetStartupData.cpWorkState == CPGetStartup.CP_WORK_STATE.cpPauseWork) {
+                                cpPauseLed.ForeColor = Color.Red;
+                            } else if (dataParser.cpGetStartupData.cpWorkState == CPGetStartup.CP_WORK_STATE.cpStopWork) {
+                                cpStopLed.ForeColor = Color.Red;
+                            } else if (dataParser.cpGetStartupData.cpWorkState == CPGetStartup.CP_WORK_STATE.cpRecoverWork) {
+                                cpRecoverLed.ForeColor = Color.Red;
+                            }
+                        }
+                    }
+                    if (dataParser.classType == CPBackDataParse.BackDataType.CurInfoType) {
+
+                        if (dataParser.cpGetCurInfoData.cpGetCurInfoExecuteResult) {
+                            Console.WriteLine("receive current charging info command success.\n");
+
+                            curChargeInfoLed.ForeColor = Color.Green;
+
+                            // deal parameter
+
+                            txtCurTotalElect.Text = dataParser.dealParaChange(dataParser.cpGetCurInfoData.cpChargeTotalElect);
+                            txtCurTotalCost.Text = dataParser.dealParaChange(dataParser.cpGetCurInfoData.cpChargeTotalPrice);
+
+                            txtCurPointElect.Text = dataParser.dealParaChange(dataParser.cpGetCurInfoData.cpChargePointElect);
+                            txtCurPeakElect.Text = dataParser.dealParaChange(dataParser.cpGetCurInfoData.cpChargePeakElect);
+                            txtCurFlatElect.Text = dataParser.dealParaChange(dataParser.cpGetCurInfoData.cpChargeFlatElect);
+                            txtCurValleyElect.Text = dataParser.dealParaChange(dataParser.cpGetCurInfoData.cpChargeValleyElect);
+
+                            txtCurPointPrice.Text = dataParser.dealParaChange(dataParser.cpGetCurInfoData.cpPointElectPrice);
+                            txtCurPeakPrice.Text = dataParser.dealParaChange(dataParser.cpGetCurInfoData.cpPeakElectPrice);
+                            txtCurFlatPrice.Text = dataParser.dealParaChange(dataParser.cpGetCurInfoData.cpFlatElectPrice);
+                            txtCurValleyPrice.Text = dataParser.dealParaChange(dataParser.cpGetCurInfoData.cpValleyElectPrice);
+
+                            txtCurPointCost.Text = dataParser.dealParaChange(dataParser.cpGetCurInfoData.cpPointCost);
+                            txtCurPeakCost.Text = dataParser.dealParaChange(dataParser.cpGetCurInfoData.cpPeakCost);
+                            txtCurFlatCost.Text = dataParser.dealParaChange(dataParser.cpGetCurInfoData.cpFlatCost);
+                            txtCurValleyCost.Text = dataParser.dealParaChange(dataParser.cpGetCurInfoData.cpValleyCost);
+
+                            chargeInfoFlg = true;
+
+                            if (btnCheckChargeInfo.Text == "停止查看") {
+                                //chargeInfoTime.Enabled = true;
+                            }
+
+                        } else {
+                            Console.WriteLine("receive current charging info command fail.\n");
+
+                            curChargeInfoLed.ForeColor = Color.Red;
+                        }
+                    }
+                    //Console.WriteLine("接收客户端{0}消息{1}", myClientSocket.RemoteEndPoint.ToString(), Encoding.ASCII.GetString(result, 0, receiveNumber));
+                    
                 } catch (Exception ex) {
                     Console.WriteLine(ex.Message);
                     myClientSocket.Shutdown(SocketShutdown.Both);
@@ -1418,5 +1672,6 @@ namespace ChargingPileServer
                 }
             }
         }
+        #endregion
     }
 }

@@ -39,7 +39,7 @@
   <ItemGroup>
     <Reference Include="CPServer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\服务器库20160428-V0.0\cpServer\bin\Debug\CPServer.dll</HintPath>
+      <HintPath>..\..\..\充电桩C#模拟程序\服务器库20160428-V0.0\cpServer\bin\Debug\CPServer.dll</HintPath>
     </Reference>
     <Reference Include="IrisSkin4, Version=2006.3.22.45, Culture=neutral, PublicKeyToken=127be25a6db25e07, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.CSharp" />

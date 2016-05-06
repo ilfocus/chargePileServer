@@ -30,57 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MonitoringInterface));
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("2016050500000号充电桩");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("2016050500001号充电桩");
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("2016050500002号充电桩");
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("2016050500003号充电桩");
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("2016050500004号充电桩");
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("2016050500005号充电桩");
-            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("2016050500006号充电桩");
-            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("2016050500007号充电桩");
-            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("2016050500008号充电桩");
-            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("2016050500009号充电桩");
-            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("2016050500010号充电桩");
-            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("2016050500011号充电桩");
-            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("2016050500012号充电桩");
-            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("2016050500013号充电桩");
-            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("2016050500014号充电桩");
-            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("2016050500015号充电桩");
-            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("2016050500016号充电桩");
-            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("2016050500017号充电桩");
-            System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("2016050500018号充电桩");
-            System.Windows.Forms.TreeNode treeNode20 = new System.Windows.Forms.TreeNode("2016050500019号充电桩");
-            System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("2016050500020号充电桩");
-            System.Windows.Forms.TreeNode treeNode22 = new System.Windows.Forms.TreeNode("2016050500021号充电桩");
-            System.Windows.Forms.TreeNode treeNode23 = new System.Windows.Forms.TreeNode("2016050500022号充电桩");
-            System.Windows.Forms.TreeNode treeNode24 = new System.Windows.Forms.TreeNode("2016050500023号充电桩");
-            System.Windows.Forms.TreeNode treeNode25 = new System.Windows.Forms.TreeNode("2016050500024号充电桩");
-            System.Windows.Forms.TreeNode treeNode26 = new System.Windows.Forms.TreeNode("充电桩", new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode2,
-            treeNode3,
-            treeNode4,
-            treeNode5,
-            treeNode6,
-            treeNode7,
-            treeNode8,
-            treeNode9,
-            treeNode10,
-            treeNode11,
-            treeNode12,
-            treeNode13,
-            treeNode14,
-            treeNode15,
-            treeNode16,
-            treeNode17,
-            treeNode18,
-            treeNode19,
-            treeNode20,
-            treeNode21,
-            treeNode22,
-            treeNode23,
-            treeNode24,
-            treeNode25});
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("充电桩");
             this.btnOpenPort = new System.Windows.Forms.Button();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
@@ -232,9 +182,8 @@
             this.txtCurTotalElect = new System.Windows.Forms.TextBox();
             this.label53 = new System.Windows.Forms.Label();
             this.checkStateTime = new System.Windows.Forms.Timer(this.components);
-            this.chargeInfoTime = new System.Windows.Forms.Timer(this.components);
             this.heartLedTime = new System.Windows.Forms.Timer(this.components);
-            this.treeView1 = new System.Windows.Forms.TreeView();
+            this.tvChargePile = new System.Windows.Forms.TreeView();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBox1)).BeginInit();
@@ -1692,76 +1641,21 @@
             this.checkStateTime.Interval = 1000;
             this.checkStateTime.Tick += new System.EventHandler(this.checkStateTime_Tick);
             // 
-            // chargeInfoTime
-            // 
-            this.chargeInfoTime.Interval = 1000;
-            this.chargeInfoTime.Tick += new System.EventHandler(this.chargeInfoTime_Tick);
-            // 
             // heartLedTime
             // 
             this.heartLedTime.Interval = 1000;
             this.heartLedTime.Tick += new System.EventHandler(this.heartLedTime_Tick);
             // 
-            // treeView1
+            // tvChargePile
             // 
-            this.treeView1.Location = new System.Drawing.Point(0, 79);
-            this.treeView1.Name = "treeView1";
-            treeNode1.Name = "节点1";
-            treeNode1.Text = "2016050500000号充电桩";
-            treeNode2.Name = "节点3";
-            treeNode2.Text = "2016050500001号充电桩";
-            treeNode3.Name = "节点4";
-            treeNode3.Text = "2016050500002号充电桩";
-            treeNode4.Name = "节点5";
-            treeNode4.Text = "2016050500003号充电桩";
-            treeNode5.Name = "节点6";
-            treeNode5.Text = "2016050500004号充电桩";
-            treeNode6.Name = "节点7";
-            treeNode6.Text = "2016050500005号充电桩";
-            treeNode7.Name = "节点8";
-            treeNode7.Text = "2016050500006号充电桩";
-            treeNode8.Name = "节点9";
-            treeNode8.Text = "2016050500007号充电桩";
-            treeNode9.Name = "节点10";
-            treeNode9.Text = "2016050500008号充电桩";
-            treeNode10.Name = "节点11";
-            treeNode10.Text = "2016050500009号充电桩";
-            treeNode11.Name = "节点12";
-            treeNode11.Text = "2016050500010号充电桩";
-            treeNode12.Name = "节点13";
-            treeNode12.Text = "2016050500011号充电桩";
-            treeNode13.Name = "节点14";
-            treeNode13.Text = "2016050500012号充电桩";
-            treeNode14.Name = "节点15";
-            treeNode14.Text = "2016050500013号充电桩";
-            treeNode15.Name = "节点16";
-            treeNode15.Text = "2016050500014号充电桩";
-            treeNode16.Name = "节点17";
-            treeNode16.Text = "2016050500015号充电桩";
-            treeNode17.Name = "节点18";
-            treeNode17.Text = "2016050500016号充电桩";
-            treeNode18.Name = "节点19";
-            treeNode18.Text = "2016050500017号充电桩";
-            treeNode19.Name = "节点20";
-            treeNode19.Text = "2016050500018号充电桩";
-            treeNode20.Name = "节点21";
-            treeNode20.Text = "2016050500019号充电桩";
-            treeNode21.Name = "节点22";
-            treeNode21.Text = "2016050500020号充电桩";
-            treeNode22.Name = "节点23";
-            treeNode22.Text = "2016050500021号充电桩";
-            treeNode23.Name = "节点24";
-            treeNode23.Text = "2016050500022号充电桩";
-            treeNode24.Name = "节点25";
-            treeNode24.Text = "2016050500023号充电桩";
-            treeNode25.Name = "节点26";
-            treeNode25.Text = "2016050500024号充电桩";
-            treeNode26.Name = "节点0";
-            treeNode26.Text = "充电桩";
-            this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode26});
-            this.treeView1.Size = new System.Drawing.Size(177, 523);
-            this.treeView1.TabIndex = 501;
+            this.tvChargePile.Location = new System.Drawing.Point(0, 79);
+            this.tvChargePile.Name = "tvChargePile";
+            treeNode2.Name = "节点0";
+            treeNode2.Text = "充电桩";
+            this.tvChargePile.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            treeNode2});
+            this.tvChargePile.Size = new System.Drawing.Size(177, 523);
+            this.tvChargePile.TabIndex = 501;
             // 
             // MonitoringInterface
             // 
@@ -1769,7 +1663,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1149, 602);
-            this.Controls.Add(this.treeView1);
+            this.Controls.Add(this.tvChargePile);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panelSetTime);
@@ -1951,7 +1845,6 @@
         private System.Windows.Forms.Button btnAutoCheck;
         private System.Windows.Forms.Timer checkStateTime;
         private System.Windows.Forms.Button btnCheckChargeInfo;
-        private System.Windows.Forms.Timer chargeInfoTime;
         private System.Windows.Forms.Timer heartLedTime;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.TextBox txtLeftTime;
@@ -1961,7 +1854,7 @@
         private System.Windows.Forms.TextBox txtChargeSoc;
         private System.Windows.Forms.Button btnListen;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.TreeView treeView1;
+        private System.Windows.Forms.TreeView tvChargePile;
     }
 }
 

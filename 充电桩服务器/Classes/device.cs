@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using ZedGraph;
-
+using System.Net;
+using System.Net.Sockets;
+using CPServer;
 namespace ChargingPileServer
 {
     public partial class SubDevice
@@ -101,6 +103,17 @@ namespace ChargingPileServer
             set { devList = value; }
             get { return devList; }
         }
+    }
+    public partial class ChargePileDevice {
+        public bool isActive = false;
+
+        public IPAddress chargePileIPAddress = IPAddress.Parse("127.0.0.1");
+        public int chargePilePort = 0;
+        public UInt64 chargePileMachineAddress = 0;
+
+        public CPBackDataParse chargePileData = new CPBackDataParse();
+
+        public Socket clientSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
     }
 }
 

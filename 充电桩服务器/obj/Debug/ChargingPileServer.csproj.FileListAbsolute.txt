@@ -53,8 +53,6 @@ E:\充电桩\gitHub\chargePileServer\充电桩服务器\obj\Debug\串口通信.e
 E:\充电桩\gitHub\chargePileServer\充电桩服务器\obj\Debug\串口通信.pdb
 E:\充电桩\gitHub\chargePileServer\充电桩服务器\bin\Debug\串口通信.exe
 E:\充电桩\gitHub\chargePileServer\充电桩服务器\bin\Debug\wyb7led.dll
-E:\充电桩\gitHub\chargePileServer\充电桩服务器\bin\Debug\CPServer.pdb
-E:\充电桩\gitHub\chargePileServer\充电桩服务器\obj\Debug\ChargingPileServer.csprojResolveAssemblyReference.cache
 E:\充电桩\gitHub\chargePileServer\充电桩服务器\obj\Debug\ChargingPileServer.MonitoringInterface.resources
 E:\充电桩\gitHub\chargePileServer\充电桩服务器\obj\Debug\ChargingPileServer.Properties.Resources.resources
 E:\充电桩\gitHub\chargePileServer\充电桩服务器\obj\Debug\ChargingPileServer.WinForm.OnOffSet.resources
@@ -64,3 +62,5 @@ E:\充电桩\gitHub\chargePileServer\充电桩服务器\obj\Debug\ChargingPileSe
 E:\充电桩\gitHub\chargePileServer\充电桩服务器\obj\Debug\ChargingPileServer.WinForm.UserLoin.resources
 E:\充电桩\gitHub\chargePileServer\充电桩服务器\obj\Debug\ChargingPileServer.csproj.GenerateResource.Cache
 E:\充电桩\gitHub\chargePileServer\充电桩服务器\bin\Debug\串口通信.pdb
+E:\充电桩\gitHub\chargePileServer\充电桩服务器\bin\Debug\CPServer.dll
+E:\充电桩\gitHub\chargePileServer\充电桩服务器\bin\Debug\CPServer.pdb
