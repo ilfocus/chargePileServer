@@ -49,6 +49,8 @@ namespace ChargingPileServer
         
         private List<ChargePileDevice> cpDevice = new List<ChargePileDevice>(); // creat charge pile object collection
 
+        private List<chargePileDataPacket>cpDataPacket = new List<chargePileDataPacket>();
+
         Queue receiveByteQueue = Queue.Synchronized(new Queue());//线程安全的数据队列，用来中转串口来的数据
 
         PointPairList curAList = new PointPairList();
@@ -62,7 +64,7 @@ namespace ChargingPileServer
         private byte ubNumberTestMachine = 0x00;                // 主机号
 
         TreeNode node1 = new TreeNode();
-
+        
         SetComPara frmSetComPara = new SetComPara();            // 定义串口参数设置对象
         OnOffSet frmOnOffSet = new OnOffSet();                  // 定义开关机设置对象
         private ParameterSet paraSetForm = null;                // 参数显示对象
@@ -932,39 +934,61 @@ namespace ChargingPileServer
         private void sendHeartFrameData(byte cmdCode)
         {
 
-            CPSendDataPackage sendDataPack = new CPSendDataPackage();
+            //CPSendDataPackage sendDataPack = new CPSendDataPackage();
 
             if (txtChargingPileAddress.Text != "") {
-                UInt64 temp = Convert.ToUInt64(txtChargingPileAddress.Text);
+                //UInt64 temp = Convert.ToUInt64(txtChargingPileAddress.Text);
 
-                byte[] sendData = sendDataPack.sendDataPackage(cmdCode,temp);
+                //byte[] sendData = sendDataPack.sendDataPackage(cmdCode,temp);
                 //serverSocket.Send(sendData, sendData.Length, 0);
                 if (true == serialPort1.IsOpen) {
-                    serialPort1.Write(sendData, 0, sendData.Length);
+                    //serialPort1.Write(sendData, 0, sendData.Length);
                 }
                 if (btnListen.Text == "关闭监听") {
                     // 打开了监听
-                    UInt64 address = Convert.ToUInt64(txtChargingPileAddress.Text);
+                   // UInt64 address = Convert.ToUInt64(txtChargingPileAddress.Text);
+                    /*
                     for (int i = 0; i < cpDevice.Count; i++) {
                         if (cpDevice[i].chargePileMachineAddress == address) {
-                            cpDevice[i].clientSocket.Send(sendData, sendData.Length, 0);
+                            cpDevice[i].clientSocket.Send(sendData,sendData.Length,0);
                         }
-                    }
+                    }*/
+                    UInt64 address = Convert.ToUInt64(txtChargingPileAddress.Text);
+                    chargePileData.sendDataToChargePile(cmdCode, address);
+                    /*
+                    for (int i = 0; i < chargePileData.cpDataPacket.Count; i++) {
+                        Console.WriteLine("连接成功的机器地址为" + chargePileData.cpDataPacket[i].chargePileData.cpAddress);
+                        if (chargePileData.cpDataPacket[i].chargePileData.cpAddress == address) {
+                            chargePileData.cpDataPacket[i].clientSocket.Send(sendData, sendData.Length, 0);
+
+                            IPAddress ip = ((System.Net.IPEndPoint)chargePileData.cpDataPacket[i].clientSocket.RemoteEndPoint).Address;
+                            int port = ((System.Net.IPEndPoint)chargePileData.cpDataPacket[i].clientSocket.RemoteEndPoint).Port;
+                            Console.WriteLine("我是服务器，检测到的客户端ip是：" + ip);
+                            Console.WriteLine("端口号是：" + port);
+                            Console.WriteLine("服务器发送数据成功---机器地址为" + address);
+                        }
+                    }*/
                 }
             } else {
 
-                byte[] sendData = sendDataPack.sendDataPackage(cmdCode);
+                //byte[] sendData = sendDataPack.sendDataPackage(cmdCode);
                 //Socket clientSocket = serverSocket.Accept();
                 //clientSocket.Send(sendData, sendData.Length, 0);
                 if (true == serialPort1.IsOpen) {
-                    serialPort1.Write(sendData, 0, sendData.Length);
+                    //serialPort1.Write(sendData, 0, sendData.Length);
                 }
                 if (btnListen.Text == "关闭监听") {
                     // 打开了监听
                     UInt64 address = 0x1122334455667788;
+                    /*
                     for (int i = 0; i < cpDevice.Count; i++) {
                         if (cpDevice[i].chargePileMachineAddress == address) {
-                            cpDevice[i].clientSocket.Send(sendData, sendData.Length, 0);
+                            cpDevice[i].clientSocket.Send(sendData,sendData.Length,0);
+                        }
+                    }*/
+                    for (int i = 0; i < cpDataPacket.Count; i++) {
+                        if (cpDataPacket[i].chargePileData.cpAddress == address) {
+                            //cpDataPacket[i].clientSocket.Send(sendData, sendData.Length, 0);
                         }
                     }
                 }
@@ -1028,7 +1052,7 @@ namespace ChargingPileServer
         private void sendSetTimeData(byte cmdCode)
         {
 
-            CPSendDataPackage sendDataPack = new CPSendDataPackage();
+            //CPSendDataPackage sendDataPack = new CPSendDataPackage();
 
             CPSetSendDataTime sendTimeData = new CPSetSendDataTime();
             if (cbSystemTime.Checked) {
@@ -1062,38 +1086,56 @@ namespace ChargingPileServer
                 sendTimeData.minute = txtMinute.Text;
                 sendTimeData.second = txtSecond.Text;
             }
+
+            UInt64 address = Convert.ToUInt64(txtChargingPileAddress.Text);
+
+            chargePileData.sendDataToChargePile(cmdCode, address, sendTimeData);
+
             if (txtChargingPileAddress.Text != "") {
                 UInt64 temp = Convert.ToUInt64(txtChargingPileAddress.Text);
-                byte[] sendData = sendDataPack.sendTimeDataPackage(cmdCode, sendTimeData,temp);
+               // byte[] sendData = sendDataPack.sendTimeDataPackage(cmdCode, sendTimeData,temp);
 
                 if (true == serialPort1.IsOpen) {
-                    serialPort1.Write(sendData, 0, sendData.Length);
+                   // serialPort1.Write(sendData, 0, sendData.Length);
                 }
 
                 if (btnListen.Text == "关闭监听") {
                     // 打开了监听
-                    UInt64 address = Convert.ToUInt64(txtChargingPileAddress.Text);
+                   /* UInt64 address = Convert.ToUInt64(txtChargingPileAddress.Text);
+                    
                     for (int i = 0; i < cpDevice.Count; i++) {
                         if (cpDevice[i].chargePileMachineAddress == address) {
                             cpDevice[i].clientSocket.Send(sendData,sendData.Length,0);
                         }
                     }
+                    for (int i = 0; i < cpDevice.Count; i++) {
+                        if (cpDataPacket[i].chargePileData.cpAddress == address) {
+                            cpDataPacket[i].clientSocket.Send(sendData, sendData.Length, 0);
+                        }
+                    }*/
+                    
                 }
 
 
             } else {
-                byte[] sendData = sendDataPack.sendTimeDataPackage(cmdCode, sendTimeData);
+               // byte[] sendData = sendDataPack.sendTimeDataPackage(cmdCode, sendTimeData);
                 if (true == serialPort1.IsOpen) {
-                    serialPort1.Write(sendData, 0, sendData.Length);
+                    //serialPort1.Write(sendData, 0, sendData.Length);
                 }
                 if (btnListen.Text == "关闭监听") {
                     // 打开了监听
-                    UInt64 address = 0x1122334455667788;
+                    /* UInt64 address = 0x1122334455667788;
+                   
                     for (int i = 0; i < cpDevice.Count; i++) {
                         if (cpDevice[i].chargePileMachineAddress == address) {
-                            cpDevice[i].clientSocket.Send(sendData, sendData.Length, 0);
+                            cpDevice[i].clientSocket.Send(sendData,sendData.Length,0);
                         }
                     }
+                    for (int i = 0; i < cpDevice.Count; i++) {
+                        if (cpDataPacket[i].chargePileData.cpAddress == address) {
+                            cpDataPacket[i].clientSocket.Send(sendData, sendData.Length, 0);
+                        }
+                    }*/
                 }
             }
 
@@ -1137,6 +1179,9 @@ namespace ChargingPileServer
             sendRataData.cpFlatPrice = Convert.ToUInt32(txtRateFlatPrice.Text);
             sendRataData.cpVallPrice = Convert.ToUInt32(txtRateValleyPrice.Text);
 
+
+            UInt64 address = Convert.ToUInt64(txtChargingPileAddress.Text);
+            chargePileData.sendDataToChargePile(cmdCode, address, sendRataData);
             
             if (txtChargingPileAddress.Text != "") {
                 UInt64 temp = Convert.ToUInt64(txtChargingPileAddress.Text);
@@ -1149,12 +1194,18 @@ namespace ChargingPileServer
                 }
                 if (btnListen.Text == "关闭监听") {
                     // 打开了监听
-                    UInt64 address = Convert.ToUInt64(txtChargingPileAddress.Text);
+                    //UInt64 address = Convert.ToUInt64(txtChargingPileAddress.Text);
+                    /*
                     for (int i = 0; i < cpDevice.Count; i++) {
                         if (cpDevice[i].chargePileMachineAddress == address) {
-                            cpDevice[i].clientSocket.Send(sendData, sendData.Length, 0);
+                            cpDevice[i].clientSocket.Send(sendData,sendData.Length,0);
                         }
                     }
+                    for (int i = 0; i < cpDevice.Count; i++) {
+                        if (cpDataPacket[i].chargePileData.cpAddress == address) {
+                            cpDataPacket[i].clientSocket.Send(sendData, sendData.Length, 0);
+                        }
+                    }*/
                 }
             } else {
                 byte[] sendData = sendDataPack.sendRateDataPackage(cmdCode, sendRataData);
@@ -1163,12 +1214,18 @@ namespace ChargingPileServer
                 }
                 if (btnListen.Text == "关闭监听") {
                     // 打开了监听
-                    UInt64 address = 0x1122334455667788;
+                   /* UInt64 address = 0x1122334455667788;
+                    
                     for (int i = 0; i < cpDevice.Count; i++) {
                         if (cpDevice[i].chargePileMachineAddress == address) {
-                            cpDevice[i].clientSocket.Send(sendData, sendData.Length, 0);
+                            cpDevice[i].clientSocket.Send(sendData,sendData.Length,0);
                         }
                     }
+                    for (int i = 0; i < cpDevice.Count; i++) {
+                        if (cpDataPacket[i].chargePileData.cpAddress == address) {
+                            cpDataPacket[i].clientSocket.Send(sendData, sendData.Length, 0);
+                        }
+                    }*/
                 }
 
             }
@@ -1182,6 +1239,8 @@ namespace ChargingPileServer
         private void btnSetPrice_Click(object sender, EventArgs e)
         {
             sendRateData(0x22);
+
+            
         }
         private void sendCPStateData(byte cmdCode)
         {
@@ -1189,7 +1248,9 @@ namespace ChargingPileServer
         }
         private void btnCPState_Click(object sender, EventArgs e)
         {
-            sendCPStateData(0x23);
+            //sendCPStateData(0x23);
+            UInt64 address = Convert.ToUInt64(txtChargingPileAddress.Text);
+            chargePileData.sendDataToChargePile(0x23, address);
         }
         private void sendCPStartAndStopData(byte cmdCode,byte para)
         {
@@ -1257,7 +1318,9 @@ namespace ChargingPileServer
         }
         private void btnCurCharge_Click(object sender, EventArgs e)
         {
-            sendCurChargeData(0x25);
+            //sendCurChargeData(0x25);
+            UInt64 address = Convert.ToUInt64(txtChargingPileAddress.Text);
+            chargePileData.sendDataToChargePile(0x25, address);
         }
 
         private void btnPause_Click(object sender, EventArgs e) {
@@ -1291,6 +1354,7 @@ namespace ChargingPileServer
 
         private void TSBtnExist_Click(object sender, EventArgs e) {
             System.Windows.Forms.Application.Exit();
+            //Application.Exit();
         }
 
         private bool checkStateThreadFlg = false;
@@ -1398,51 +1462,81 @@ namespace ChargingPileServer
         private static int myProt = 8885;   //端口
         static Socket serverSocket;
         static Socket clientSocket;
+        //ChargePileDevice chargePile = null;
+        chargePileDataPacketList chargePileData = null;
         private void btnListen_Click(object sender, EventArgs e) {
             if (btnListen.Text == "打开监听") {
                 btnListen.Text = "关闭监听";
+                //ChargePileDevice chargePile = new ChargePileDevice();
+                //CPGetHeartFrame heart = new CPGetHeartFrame();
+                //chargePileDataPacket chargePileData = new chargePileDataPacket();
+                chargePileData = new chargePileDataPacketList();
+
+                //Thread myThread = new Thread(dealData);
+                //myThread.Start(chargePileData);
+                /*
                 IPAddress ip = IPAddress.Parse("127.0.0.1");
                 serverSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
                 serverSocket.Bind(new IPEndPoint(ip, myProt));  //绑定IP地址：端口
                 serverSocket.Listen(100);    //设定最多100个排队连接请求
                 // 通过Clientsoket发送数据
+                //clientSocket = serverSocket.Accept();
                 Thread myThread = new Thread(ListenClientConnect);
                 myThread.Start();
+                */
+                
                 return;
             } else {
                 btnListen.Text = "打开监听";
             }
             
         }
+        private void dealData(object chargePileData) {
+            chargePileDataPacket myData = (chargePileDataPacket)chargePileData;
+            while (true) {
+                if (myData.isActive) {
+                    // 接收数据成功
+                    // 
+                    Console.WriteLine("dealData接收数据成功---myData" + myData.chargePileData.cpAddress);
+                    // 处理成功cpDataPacket
+                    if (false == updataDeviceList(myData)) {
+                        cpDataPacket.Add(myData);
+                        for (int i = 0; i < cpDataPacket.Count; i++) {
+                            
+                        }
+                    } 
+                    myData.isActive = false;
+                }
+                Thread.Sleep(500);
+
+            }
+
+        }
+        private bool updataDeviceList(chargePileDataPacket newDevice) {
+            for (int i = 0; i < cpDataPacket.Count; i++) {
+                if (newDevice.chargePileData.cpAddress == cpDataPacket[i].chargePileData.cpAddress) {
+                    cpDataPacket[i] = newDevice;
+                    return true;
+                }
+            }
+            return false;
+        }
+
         /// <summary>
         /// 监听客户端连接
         /// </summary>
         private void ListenClientConnect() {
             while (true) {
                 clientSocket = serverSocket.Accept();
-
                 IPAddress ip = ((System.Net.IPEndPoint)clientSocket.RemoteEndPoint).Address;
                 int port = ((System.Net.IPEndPoint)clientSocket.RemoteEndPoint).Port;
-
                 Console.WriteLine("我是服务器，检测到的客户端ip是：" + ip);
                 Console.WriteLine("端口号是：" + port);
-
-                
-
                 Thread receiveThread = new Thread(ReceiveMessage);
                 receiveThread.Start(clientSocket);
             }
         }
-
-        private bool updataDeviceList(ChargePileDevice newDevice) {
-            for (int i = 0; i < cpDevice.Count; i++) {
-                if (newDevice.chargePileMachineAddress == cpDevice[i].chargePileMachineAddress) {
-                    cpDevice[i] = newDevice;
-                    return true;
-                }
-            }
-            return false;
-        }
+        
         private void updateFrameTimer_Tick(object sender, EventArgs e) {
 
             //for (int i = 0; i < cpDevice.Count; i++) {
@@ -1468,6 +1562,9 @@ namespace ChargingPileServer
         /// 接收消息
         /// </summary>
         /// <param name="clientSocket"></param>
+        /// 
+#region 接收数据
+
         private void ReceiveMessage(object clientSocket) {
             Socket myClientSocket = (Socket)clientSocket;
             while (true) {
@@ -1476,12 +1573,12 @@ namespace ChargingPileServer
                     int receiveNumber = myClientSocket.Receive(result);
 
                     byte[] tempArray = new byte[receiveNumber];
-
                     for (int i = 0; i < receiveNumber; i++) {
                         tempArray[i] = result[i];
                     }
 
                     CPBackDataParse dataParser = new CPBackDataParse();
+
                     dataParser = dataParser.packageParser(tempArray, receiveNumber);
 
                     if (dataParser != null) {
@@ -1493,9 +1590,9 @@ namespace ChargingPileServer
                         device.chargePilePort = ((System.Net.IPEndPoint)myClientSocket.RemoteEndPoint).Port;
                         device.chargePileMachineAddress = dataParser.cpAddress;
                         device.clientSocket = myClientSocket;
-                        if (false == updataDeviceList(device)) {
-                            cpDevice.Add(device);
-                        }
+                        //if (false == updataDeviceList(device)) {
+                       //     cpDevice.Add(device);
+                        //}
                         
 
 
@@ -1672,6 +1769,7 @@ namespace ChargingPileServer
                 }
             }
         }
+#endregion
         #endregion
     }
 }
