@@ -22,10 +22,6 @@ using System.Net.Sockets;
 using System.Net;
 using System.Threading;
 
-//using ChargingPileServer.Classes;
-using Microsoft.Office.Core;
-using Excel = Microsoft.Office.Interop.Excel;
-
 using CPServer;
 
 namespace ChargingPileServer
@@ -73,15 +69,6 @@ namespace ChargingPileServer
         private int iDataLenRecrod = 0;                         // 所以用数组把数据连接起来 
         UInt16 uiCheckCnt = 0;                                  // 数据校验错误后，重传计数
         private bool bQueryMsgFlg = false;                      // 查询数据数据包发送标志
-
-        public string mFilename;
-        public Excel.Application app;
-        public Excel.Workbooks wbs;
-        public Excel.Workbook wb;
-        public Excel.Worksheets wss;
-        public Excel.Worksheet ws;
-        private UInt16 uwExcelDataCnt = 0;
-        private bool FileExistsFlag = true;
 
         static readonly UInt16[] wCRC16Table = {
          0x0000, 0xC0C1, 0xC181, 0x0140, 0xC301, 0x03C0, 0x0280, 0xC241,
@@ -427,106 +414,6 @@ namespace ChargingPileServer
             }
             paraSetForm.Owner = this;
             paraSetForm.Show();
-        }
-        
-        public void Create()//创建一个Excel对象
-        {
-            app = new Excel.Application();
-            wbs = app.Workbooks;
-            wb = wbs.Add(true);
-        }
-        public void Open(string FileName)//打开一个Excel文件
-        {
-            app = new Excel.Application();
-            wbs = app.Workbooks;
-            wb = wbs.Add(FileName);
-            mFilename = FileName;
-        }
-        public Excel.Worksheet GetSheet(string SheetName)//获取一个工作表  
-        {
-            Excel.Worksheet s = (Excel.Worksheet)wb.Worksheets[SheetName];
-            return s;
-        }
-        public Excel.Worksheet AddSheet(string SheetName)//添加一个工作表
-        {
-            Excel.Worksheet s = (Excel.Worksheet)wb.Worksheets.Add();
-            s.Name = SheetName;
-            return s;
-        } 
-        private void BtnSaveData_Click(object sender, EventArgs e)
-        {   // EXCEL表自动创建并保存 1分钟保存一次
-            
-            string path = System.Environment.CurrentDirectory + "\\" + "老化车历史数据记录";  //设置保存路径
-
-            Excel.Application excel = new Excel.Application();  //引用Excel对象
-            Excel.Workbook xBook = null;                        // Excel对象的excel文件
-            Excel._Worksheet workSheet;                         // excel文件的一个工作表
-            if (File.Exists(path + ".XLS ")) { // 存在
-                xBook = excel.Workbooks._Open(path,
-                  Missing.Value, Missing.Value, Missing.Value, Missing.Value
-                , Missing.Value, Missing.Value, Missing.Value, Missing.Value
-                , Missing.Value, Missing.Value, Missing.Value, Missing.Value);
-                
-                workSheet = (Excel.Worksheet)xBook.Sheets[1];
-                workSheet = (Excel.Worksheet)xBook.ActiveSheet;
-                FileExistsFlag = true;
-            } else { // 不存在
-                excel.Workbooks.Add();
-                workSheet = (Excel.Worksheet)excel.ActiveSheet;                // 激活当前工作文档      
-                FileExistsFlag = false;
-            }
-            //////////////////////////////////////////////////////////////////////////
-            //写入数据
-            //Excel.Range rng3 = workSheet.get_Range("C6", Missing.Value);
-            //rng3.Value2 = "Hello";
-            //rng3.Interior.ColorIndex = 6; //设置Range的背景色
-                                         
-            //workSheet.Cells[1, "A"] = "ID Number";
-            //workSheet.Cells[1, "B"] = "Current Balance";
-
-            workSheet.Cells[3, "A"] = "记录时间";
-            workSheet.Cells[3, "B"] = "老化车号";
-            workSheet.Cells[3, "C"] = "工作电流";
-            workSheet.Cells[3, "D"] = "1号分机故障点";
-            workSheet.Cells[3, "E"] = "2号分机故障点";
-            workSheet.Cells[3, "F"] = "3号分机故障点";
-            workSheet.Cells[3, "G"] = "4号分机故障点";
-            workSheet.Cells[3, "H"] = "5号分机故障点";
-            workSheet.Cells[3, "I"] = "6号分机故障点";
-            //string strNowTime = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss");
-            string strNowTime = DateTime.Now.ToString();
-            workSheet.Cells[4 + uwExcelDataCnt, "A"] = strNowTime;
-            workSheet.Cells[4 + uwExcelDataCnt, "B"] = "1号老化车";
-            workSheet.Cells[4 + uwExcelDataCnt, "C"] = "1000mA";
-            workSheet.Cells[4 + uwExcelDataCnt, "D"] = "1,5,28,30";
-            workSheet.Cells[4 + uwExcelDataCnt, "E"] = "2,5,28,30";
-            workSheet.Cells[4 + uwExcelDataCnt, "F"] = "3,5,18,30";
-            workSheet.Cells[4 + uwExcelDataCnt, "G"] = "4,5,28,30";
-            workSheet.Cells[4 + uwExcelDataCnt, "H"] = "5,5,28,30";
-            workSheet.Cells[4 + uwExcelDataCnt, "I"] = "6,5,28,30";
-            uwExcelDataCnt++;
-            if (uwExcelDataCnt > 7200) { // 可以保护5天的数据量
-                uwExcelDataCnt = 7200;
-            }
-            for (int i = 1; i < 10;i++) {
-                workSheet.Columns[i].AutoFit();
-            }
-            
-            //////////////////////////////////////////////////////////////////////////
-
-            ////////////////excel文件保存//////////////////////////////
-            excel.Visible = false;
-            if (true == FileExistsFlag) {
-                xBook.Save();
-            } else {
-                excel.ActiveWorkbook.SaveAs(path + ".XLS ",
-                   Excel.XlFileFormat.xlExcel7, null, null, false, false,
-                   Excel.XlSaveAsAccessMode.xlNoChange, null, null, null, null, null);
-            }
-            excel.Quit();
-            excel = null;
-            GC.Collect();//垃圾回收
-            ///////////////excel文件保存结束//////////////////////////
         }
         
         private void SendQueryMsg() {
@@ -1470,8 +1357,9 @@ namespace ChargingPileServer
                 //ChargePileDevice chargePile = new ChargePileDevice();
                 //CPGetHeartFrame heart = new CPGetHeartFrame();
                 //chargePileDataPacket chargePileData = new chargePileDataPacket();
-                chargePileData = new chargePileDataPacketList();
-
+                if (chargePileData == null) {
+                    chargePileData = new chargePileDataPacketList();
+                }
                 //Thread myThread = new Thread(dealData);
                 //myThread.Start(chargePileData);
                 /*
@@ -1484,10 +1372,10 @@ namespace ChargingPileServer
                 Thread myThread = new Thread(ListenClientConnect);
                 myThread.Start();
                 */
-                
                 return;
             } else {
                 btnListen.Text = "打开监听";
+                chargePileData = null;
             }
             
         }
