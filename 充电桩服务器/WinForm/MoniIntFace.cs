@@ -727,10 +727,6 @@ namespace ChargingPileServer
                         }
 
                         checkStateFlg = true;
-
-                        //if (btnAutoCheck.Text == "停止查看") {
-                        //    checkStateTime.Enabled = true;
-                        //}
                         
 
                     } else {
