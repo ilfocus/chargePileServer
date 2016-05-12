@@ -297,6 +297,14 @@ namespace ChargingPileServer
                 }
             }
 
+            // 库测试
+            CPGetState state = new CPGetState();
+            state.cpFaultH = 0x02;
+            state.cpFaultL = 0xaa;
+
+            Console.WriteLine("voltage fault" + state.cpInOverVol);
+
+
         }
         
         // 接收到的数据格式如下---PC机一次性收一台老化车的整个数据。数据的整合在数据采集器中做
