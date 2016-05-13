@@ -726,7 +726,7 @@ namespace ChargingPileServer
                             lblPlugState.Text = "没准备好";
                         }
 
-                        if (dataParser.cpGetStateData.cpCurrentState == 0x00) {
+                        if (dataParser.cpGetStateData.cpOutState == 0x00) {
                             lblCurLed.ForeColor = Color.Green;
                             lblCurState.Text = "有输出";
                         } else {
@@ -845,7 +845,7 @@ namespace ChargingPileServer
                         }
                     }*/
                     UInt64 address = Convert.ToUInt64(txtChargingPileAddress.Text);
-                    chargePileData.sendDataToChargePile(cmdCode, address);
+                    chargePileDataList.sendDataToChargePile(cmdCode, address);
                     /*
                     for (int i = 0; i < chargePileData.cpDataPacket.Count; i++) {
                         Console.WriteLine("连接成功的机器地址为" + chargePileData.cpDataPacket[i].chargePileData.cpAddress);
@@ -980,7 +980,7 @@ namespace ChargingPileServer
 
             UInt64 address = Convert.ToUInt64(txtChargingPileAddress.Text);
 
-            chargePileData.sendDataToChargePile(cmdCode, address, sendTimeData);
+            chargePileDataList.sendDataToChargePile(cmdCode, address, sendTimeData);
 
             if (txtChargingPileAddress.Text != "") {
                 UInt64 temp = Convert.ToUInt64(txtChargingPileAddress.Text);
@@ -1072,7 +1072,7 @@ namespace ChargingPileServer
 
 
             UInt64 address = Convert.ToUInt64(txtChargingPileAddress.Text);
-            chargePileData.sendDataToChargePile(cmdCode, address, sendRataData);
+            chargePileDataList.sendDataToChargePile(cmdCode, address, sendRataData);
             
             if (txtChargingPileAddress.Text != "") {
                 UInt64 temp = Convert.ToUInt64(txtChargingPileAddress.Text);
@@ -1141,7 +1141,7 @@ namespace ChargingPileServer
         {
             //sendCPStateData(0x23);
             UInt64 address = Convert.ToUInt64(txtChargingPileAddress.Text);
-            chargePileData.sendDataToChargePile(0x23, address);
+            chargePileDataList.sendDataToChargePile(0x23, address);
         }
         private void sendCPStartAndStopData(byte cmdCode,byte para)
         {
@@ -1211,7 +1211,7 @@ namespace ChargingPileServer
         {
             //sendCurChargeData(0x25);
             UInt64 address = Convert.ToUInt64(txtChargingPileAddress.Text);
-            chargePileData.sendDataToChargePile(0x25, address);
+            chargePileDataList.sendDataToChargePile(0x25, address);
         }
 
         private void btnPause_Click(object sender, EventArgs e) {
@@ -1354,15 +1354,15 @@ namespace ChargingPileServer
         static Socket serverSocket;
         static Socket clientSocket;
         //ChargePileDevice chargePile = null;
-        chargePileDataPacketList chargePileData = null;
+        chargePileDataPacketList chargePileDataList = null;
         private void btnListen_Click(object sender, EventArgs e) {
             if (btnListen.Text == "打开监听") {
                 btnListen.Text = "关闭监听";
                 //ChargePileDevice chargePile = new ChargePileDevice();
                 //CPGetHeartFrame heart = new CPGetHeartFrame();
                 //chargePileDataPacket chargePileData = new chargePileDataPacket();
-                if (chargePileData == null) {
-                    chargePileData = new chargePileDataPacketList();
+                if (chargePileDataList == null) {
+                    chargePileDataList = new chargePileDataPacketList();
                 }
                 //Thread myThread = new Thread(dealData);
                 //myThread.Start(chargePileData);
@@ -1379,7 +1379,7 @@ namespace ChargingPileServer
                 return;
             } else {
                 btnListen.Text = "打开监听";
-                chargePileData = null;
+                chargePileDataList = null;
             }
             
         }
@@ -1431,24 +1431,66 @@ namespace ChargingPileServer
         
         private void updateFrameTimer_Tick(object sender, EventArgs e) {
 
-            //for (int i = 0; i < cpDevice.Count; i++) {
-            //    string name = cpDevice[i].chargePileMachineAddress.ToString() + "充电桩";
-            //    if (cpDevice[i].chargePileMachineAddress == 0x1122334455667788) {
-            //        name = "默认充电桩";
-            //    }
-            //    foreach (TreeNode node in tvChargePile.Nodes) {
-            //        if (node.Name == name) {
-            //            return;
-            //        }
-                    
-            //    }
-            //    //TreeNode tvnode = new TreeNode();
-            //    //node.Nodes.Add(new TreeNode(name));
-            //    tvChargePile.Nodes.Add(new TreeNode(name));
-            //    //tvChargePile.ExpandAll();
-            //}
+            if (chargePileDataList != null) {
+                //Console.WriteLine("接收到了数据！");
 
-            
+                for (int i = 0; i < chargePileDataList.cpDataPacket.Count; i++) {
+                    chargePileDataPacket data = chargePileDataList.cpDataPacket[i];
+ 
+                    CPGetState.CPCurrentState CurrentState = data.CurrentState;
+                    byte CommState = data.CommState;
+                    float CurrentSOC = data.CurrentSOC;
+                    int ChargeTime = data.ChargeTime;
+                    int RemainTime = data.RemainTime;
+
+                    float CurrentVOL = data.CurrentVOL;
+                    float CurrentCur = data.CurrentCur;
+                    float OutPower = data.OutPower;
+                    float OutQuantity = data.OutQuantity;
+                    int ACCTime = data.ACCTime;
+                    bool[] CurrentAlarmInfo = data.CurrentAlarmInfo;
+
+                    float TotalQuantity = data.TotalQuantity;
+                    float TotalFee = data.TotalFee;
+                    Console.WriteLine("--------------TotalFee----------" + TotalFee);
+                    float JianQ = data.JianQ;
+                    float JianPrice = data.JianPrice;
+                    float JianFee = data.JianFee;
+                    float fengQ = data.fengQ;
+                    float fengPrice = data.fengPrice;
+                    float fengFee = data.fengFee;
+
+                    float PingQ = data.PingQ;
+                    float PingPrice = data.PingPrice;
+                    float PingFee = data.PingFee;
+
+                    float GUQ = data.GUQ;
+                    float GUPrice = data.GUPrice;
+                    float GUFee = data.GUFee;
+
+                    // 以下数据采用默认值
+                    float BatterySoc = data.BatterySoc;
+                    bool BMSState = data.BMSState;
+                    float PortVol = data.PortVol;
+                    int CellNum = data.CellNum;
+                    int TempNum = data.TempNum;
+                    float MaxVol = data.MaxVol;
+                    float MaxCTemp = data.MaxCTemp;
+                    float CellMaxVol = data.CellMaxVol;
+                    int CellPos = data.CellPos;
+                    float CellMinVol = data.CellMinVol;
+                    int CellMinVolPos = data.CellMinVolPos;
+                    float MaxTemp = data.MaxTemp;
+                    float MinTemp = data.MinTemp;
+                    bool VolDataAlarm = data.VolDataAlarm;
+                    bool SampleVolFault = data.SampleVolFault;
+                    bool UvorOvAlarm = data.UvorOvAlarm;
+                    bool SystemParaAlarm = data.SystemParaAlarm;
+                    bool FanFailFault = data.FanFailFault;
+                    bool SampleTempFault = data.SampleTempFault;/**/
+                }
+
+            }
         }
         /// <summary>
         /// 接收消息
@@ -1565,7 +1607,7 @@ namespace ChargingPileServer
                                 lblPlugState.Text = "没准备好";
                             }
 
-                            if (dataParser.cpGetStateData.cpCurrentState == 0x00) {
+                            if (dataParser.cpGetStateData.cpOutState == 0x00) {
                                 lblCurLed.ForeColor = Color.Green;
                                 lblCurState.Text = "有输出";
                             } else {

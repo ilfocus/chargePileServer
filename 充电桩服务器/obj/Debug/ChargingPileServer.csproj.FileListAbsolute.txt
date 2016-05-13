@@ -96,7 +96,6 @@ E:\充电桩\ChargePile\chargePileServer\充电桩服务器\bin\Debug\wyb7led.dl
 E:\充电桩\ChargePile\chargePileServer\充电桩服务器\bin\Debug\ChargingPileServer.pdb
 E:\充电桩\ChargePile\chargePileServer\充电桩服务器\bin\Debug\CPServer.dll
 E:\充电桩\ChargePile\chargePileServer\充电桩服务器\bin\Debug\CPServer.pdb
-E:\充电桩\ChargePile\chargePileServer\充电桩服务器\obj\Debug\ChargingPileServer.csprojResolveAssemblyReference.cache
 Y:\chargePile\chargePileServer\充电桩服务器\bin\Debug\ChargingPileServer.exe
 Y:\chargePile\chargePileServer\充电桩服务器\bin\Debug\ChargingPileServer.pdb
 Y:\chargePile\chargePileServer\充电桩服务器\bin\Debug\CPServer.dll
