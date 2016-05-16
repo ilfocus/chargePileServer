@@ -1433,7 +1433,6 @@ namespace ChargingPileServer
 
             if (chargePileDataList != null) {
                 //Console.WriteLine("接收到了数据！");
-
                 for (int i = 0; i < chargePileDataList.cpDataPacket.Count; i++) {
                     chargePileDataPacket data = chargePileDataList.cpDataPacket[i];
  
@@ -1452,7 +1451,7 @@ namespace ChargingPileServer
 
                     float TotalQuantity = data.TotalQuantity;
                     float TotalFee = data.TotalFee;
-                    Console.WriteLine("--------------TotalFee----------" + TotalFee);
+                    //Console.WriteLine("--------------TotalFee----------" + TotalFee);
                     float JianQ = data.JianQ;
                     float JianPrice = data.JianPrice;
                     float JianFee = data.JianFee;

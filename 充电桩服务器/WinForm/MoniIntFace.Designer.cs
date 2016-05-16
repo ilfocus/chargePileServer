@@ -458,7 +458,6 @@
             // 
             // updateFrameTimer
             // 
-            this.updateFrameTimer.Enabled = true;
             this.updateFrameTimer.Interval = 500;
             this.updateFrameTimer.Tick += new System.EventHandler(this.updateFrameTimer_Tick);
             // 
