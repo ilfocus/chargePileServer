@@ -1065,10 +1065,10 @@ namespace ChargingPileServer
 
             CPSetSendDataRate sendRataData = new CPSetSendDataRate();
 
-            sendRataData.cpPointPrice = Convert.ToUInt32(txtRatePointPrice.Text);
-            sendRataData.cpPeakPrice = Convert.ToUInt32(txtRatePeakPrice.Text);
-            sendRataData.cpFlatPrice = Convert.ToUInt32(txtRateFlatPrice.Text);
-            sendRataData.cpVallPrice = Convert.ToUInt32(txtRateValleyPrice.Text);
+//             sendRataData.cpPointPrice = Convert.ToUInt32(txtRatePointPrice.Text);
+//             sendRataData.cpPeakPrice = Convert.ToUInt32(txtRatePeakPrice.Text);
+//             sendRataData.cpFlatPrice = Convert.ToUInt32(txtRateFlatPrice.Text);
+//             sendRataData.cpVallPrice = Convert.ToUInt32(txtRateValleyPrice.Text);
 
 
             UInt64 address = Convert.ToUInt64(txtChargingPileAddress.Text);
@@ -1129,8 +1129,43 @@ namespace ChargingPileServer
         }
         private void btnSetPrice_Click(object sender, EventArgs e)
         {
-            sendRateData(0x22);
+            //sendRateData(0x22);
+            if (txtRatePointPrice.Text == "") {
+                MessageBox.Show("请输入尖电价!");
+                return;
+            }
+            if (txtRatePeakPrice.Text == "") {
+                MessageBox.Show("请输入峰电价!");
+                return;
+            }
+            if (txtRateFlatPrice.Text == "") {
+                MessageBox.Show("请输入平电价!");
+                return;
+            }
+            if (txtRateValleyPrice.Text == "") {
+                MessageBox.Show("请输入谷电价!");
+                return;
+            }
+            //CPSendDataPackage sendDataPack = new CPSendDataPackage();
 
+            CPSetSendDataRate sendRataData = new CPSetSendDataRate();
+            try {
+                sendRataData.cpPointPriceD = Convert.ToDouble(txtRatePointPrice.Text);
+                sendRataData.cpPeakPriceD = Convert.ToDouble(txtRatePeakPrice.Text);
+                sendRataData.cpFlatPriceD = Convert.ToDouble(txtRateFlatPrice.Text);
+                sendRataData.cpVallPriceD = Convert.ToDouble(txtRateValleyPrice.Text);
+            } catch (Exception ex) {
+                MessageBox.Show("输入数据有误！{0}",ex.Message);
+            }
+            
+
+            if (txtChargingPileAddress.Text == "") {
+                return;
+            }
+            UInt64 temp = Convert.ToUInt64(txtChargingPileAddress.Text);
+
+            chargePileDataList.sendDataToChargePile(0x22, temp,sendRataData);
+            
             
         }
         private void sendCPStateData(byte cmdCode)
