@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MonitoringInterface));
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("充电桩");
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("充电桩");
             this.btnOpenPort = new System.Windows.Forms.Button();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
@@ -184,6 +184,8 @@
             this.checkStateTime = new System.Windows.Forms.Timer(this.components);
             this.heartLedTime = new System.Windows.Forms.Timer(this.components);
             this.tvChargePile = new System.Windows.Forms.TreeView();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBox1)).BeginInit();
@@ -419,6 +421,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.labeltx);
             this.panel1.Controls.Add(this.picBox1);
             this.panel1.Location = new System.Drawing.Point(177, 564);
@@ -458,6 +462,7 @@
             // 
             // updateFrameTimer
             // 
+            this.updateFrameTimer.Enabled = true;
             this.updateFrameTimer.Interval = 500;
             this.updateFrameTimer.Tick += new System.EventHandler(this.updateFrameTimer_Tick);
             // 
@@ -1649,12 +1654,26 @@
             // 
             this.tvChargePile.Location = new System.Drawing.Point(0, 79);
             this.tvChargePile.Name = "tvChargePile";
-            treeNode1.Name = "节点0";
-            treeNode1.Text = "充电桩";
+            treeNode5.Name = "节点0";
+            treeNode5.Text = "充电桩";
             this.tvChargePile.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode1});
+            treeNode5});
             this.tvChargePile.Size = new System.Drawing.Size(177, 523);
             this.tvChargePile.TabIndex = 501;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(199, 12);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 21);
+            this.textBox1.TabIndex = 468;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(323, 12);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(460, 21);
+            this.textBox2.TabIndex = 469;
             // 
             // MonitoringInterface
             // 
@@ -1854,6 +1873,8 @@
         private System.Windows.Forms.Button btnListen;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.TreeView tvChargePile;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
     }
 }
 

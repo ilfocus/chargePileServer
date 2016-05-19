@@ -1472,17 +1472,117 @@ namespace ChargingPileServer
                     chargePileDataPacket data = chargePileDataList.cpDataPacket[i];
  
                     CPGetState.CPCurrentState CurrentState = data.CurrentState;
+                    switch (CurrentState) {
+                        case CPGetState.CPCurrentState.FaultState: { textBox1.Text = "故障状态"; break; }
+                        case CPGetState.CPCurrentState.FreeState: { textBox1.Text = "空闲状态"; break; }
+                        case CPGetState.CPCurrentState.ChargeState: { textBox1.Text = "充电状态"; break; }
+                        case CPGetState.CPCurrentState.ParkingState: { textBox1.Text = "停车状态"; break; }
+                        case CPGetState.CPCurrentState.OrderState: { textBox1.Text = "预约状态"; break; }
+                        case CPGetState.CPCurrentState.MainTainState: { textBox1.Text = "维护状态"; break; }
+                    }
+
                     byte CommState = data.CommState;
                     float CurrentSOC = data.CurrentSOC;
                     int ChargeTime = data.ChargeTime;
                     int RemainTime = data.RemainTime;
-
                     float CurrentVOL = data.CurrentVOL;
+
                     float CurrentCur = data.CurrentCur;
+                    try {
+                        if (chargePileDataList.cpDataPacket[i].chargePileMachineAddress
+                                                == Convert.ToUInt64(txtChargingPileAddress.Text)) {
+                            txtValtage.Text = CurrentVOL.ToString();
+                            txtCurrent.Text = CurrentCur.ToString();
+                        }
+                    } catch { }
+                    
                     float OutPower = data.OutPower;
                     float OutQuantity = data.OutQuantity;
                     int ACCTime = data.ACCTime;
                     bool[] CurrentAlarmInfo = data.CurrentAlarmInfo;
+
+                    if (CurrentAlarmInfo[0]) {
+                        textBox2.Text = "、输入过压";
+                    } else {
+                        try {
+                            textBox2.Text = textBox2.Text.Replace("、输入过压","");
+                        } catch { }
+                        
+                    }
+                    if (CurrentAlarmInfo[1]) {
+                        textBox2.Text = "、输出过压";
+                    } else {
+                        try {
+                            textBox2.Text = textBox2.Text.Replace("、输出过压", "");
+                        } catch { }
+                        
+                    }
+                    if (CurrentAlarmInfo[2]) {
+                        textBox2.Text = "、输入欠压";
+                    } else {
+                        try {
+                            textBox2.Text = textBox2.Text.Replace("、输入欠压", "");
+                        } catch { }
+                        
+                    }
+                    if (CurrentAlarmInfo[3]) {
+                        textBox2.Text = "、输出欠压";
+                    } else {
+                        try {
+                            textBox2.Text = textBox2.Text.Replace("、输出欠压", "");
+                        } catch { }
+                        
+                    }
+                    if (CurrentAlarmInfo[4]) {
+                        textBox2.Text = "、输入过流";
+                    } else {
+                        try {
+                            textBox2.Text = textBox2.Text.Replace("、输入过流", "");
+                        } catch { }
+                        
+                    }
+                    if (CurrentAlarmInfo[5]) {
+                        textBox2.Text = "、输出过流";
+                    } else {
+                        try {
+                            textBox2.Text = textBox2.Text.Replace("、输出过流", "");
+                        } catch { }
+                        
+                    }
+                    if (CurrentAlarmInfo[6]) {
+                        textBox2.Text = "、输入欠流";
+                    } else {
+                        try {
+                            textBox2.Text = textBox2.Text.Replace("、输入欠流", "");
+                        } catch { }
+                        
+                    }
+                    if (CurrentAlarmInfo[7]) {
+                        textBox2.Text = "、输出欠流";
+                    } else {
+                        try {
+                            textBox2.Text = textBox2.Text.Replace("、输出欠流", "");
+                        } catch { }
+                        
+                    }
+                    if (CurrentAlarmInfo[8]) {
+                        textBox2.Text = "、温度过高";
+                    } else {
+                        try {
+                            textBox2.Text = textBox2.Text.Replace("、温度过高", "");
+                        } catch { }
+                        
+                    }
+                    if (CurrentAlarmInfo[9]) {
+                        textBox2.Text = "、输出短路";
+                    } else {
+                        try {
+                            textBox2.Text = textBox2.Text.Replace("、输入短路", "");
+                        } catch { }
+                        
+                    }
+
+
 
                     float TotalQuantity = data.TotalQuantity;
                     float TotalFee = data.TotalFee;
