@@ -223,14 +223,14 @@ namespace ChargingPileServer
             //设备数据模型初始化
             DevicesInit();
 
-            //testNode();
+            // testNode();
 
             frmSetComPara.combBaudRate.Text     = "9600";
             frmSetComPara.combDataBit.Text      = "8";
             frmSetComPara.combStopBits.Text     = "1";
             frmSetComPara.SerialParity.Text     = "None";
-            frmSetComPara.combSerialPort.Text   = "COM1";
-
+            frmSetComPara.combSerialPort.Text   = "COM2";
+            serialPort1.Encoding = Encoding.GetEncoding("gb2312");//接收发送转换编码
             // N1-N6,分机1-6,故障信息界面初始化
             for (int i = 0; i < subMachineErrorStatus_1.Length; i++)
             {
@@ -247,7 +247,7 @@ namespace ChargingPileServer
 
             // 以上部分为故障点初始化
 
-            serialPort1.Encoding = Encoding.GetEncoding("gb2312");//接收发送转换编码
+            
 
             Console.WriteLine("buff size:{0}", serialPort1.ReadBufferSize);
 
@@ -825,63 +825,19 @@ namespace ChargingPileServer
         private void sendHeartFrameData(byte cmdCode)
         {
 
-            //CPSendDataPackage sendDataPack = new CPSendDataPackage();
+            CPSendDataPackage sendDataPack = new CPSendDataPackage();
 
             if (txtChargingPileAddress.Text != "") {
-                //UInt64 temp = Convert.ToUInt64(txtChargingPileAddress.Text);
-
-                //byte[] sendData = sendDataPack.sendDataPackage(cmdCode,temp);
-                //serverSocket.Send(sendData, sendData.Length, 0);
+                UInt64 temp = Convert.ToUInt64(txtChargingPileAddress.Text);
+                byte[] sendData = sendDataPack.sendDataPackage(cmdCode,temp);
                 if (true == serialPort1.IsOpen) {
-                    //serialPort1.Write(sendData, 0, sendData.Length);
-                }
-                if (btnListen.Text == "关闭监听") {
-                    // 打开了监听
-                   // UInt64 address = Convert.ToUInt64(txtChargingPileAddress.Text);
-                    /*
-                    for (int i = 0; i < cpDevice.Count; i++) {
-                        if (cpDevice[i].chargePileMachineAddress == address) {
-                            cpDevice[i].clientSocket.Send(sendData,sendData.Length,0);
-                        }
-                    }*/
-                    UInt64 address = Convert.ToUInt64(txtChargingPileAddress.Text);
-                    chargePileDataList.sendDataToChargePile(cmdCode, address);
-                    /*
-                    for (int i = 0; i < chargePileData.cpDataPacket.Count; i++) {
-                        Console.WriteLine("连接成功的机器地址为" + chargePileData.cpDataPacket[i].chargePileData.cpAddress);
-                        if (chargePileData.cpDataPacket[i].chargePileData.cpAddress == address) {
-                            chargePileData.cpDataPacket[i].clientSocket.Send(sendData, sendData.Length, 0);
-
-                            IPAddress ip = ((System.Net.IPEndPoint)chargePileData.cpDataPacket[i].clientSocket.RemoteEndPoint).Address;
-                            int port = ((System.Net.IPEndPoint)chargePileData.cpDataPacket[i].clientSocket.RemoteEndPoint).Port;
-                            Console.WriteLine("我是服务器，检测到的客户端ip是：" + ip);
-                            Console.WriteLine("端口号是：" + port);
-                            Console.WriteLine("服务器发送数据成功---机器地址为" + address);
-                        }
-                    }*/
+                    serialPort1.Write(sendData, 0, sendData.Length);
                 }
             } else {
 
-                //byte[] sendData = sendDataPack.sendDataPackage(cmdCode);
-                //Socket clientSocket = serverSocket.Accept();
-                //clientSocket.Send(sendData, sendData.Length, 0);
+                byte[] sendData = sendDataPack.sendDataPackage(cmdCode);
                 if (true == serialPort1.IsOpen) {
-                    //serialPort1.Write(sendData, 0, sendData.Length);
-                }
-                if (btnListen.Text == "关闭监听") {
-                    // 打开了监听
-                    UInt64 address = 0x1122334455667788;
-                    /*
-                    for (int i = 0; i < cpDevice.Count; i++) {
-                        if (cpDevice[i].chargePileMachineAddress == address) {
-                            cpDevice[i].clientSocket.Send(sendData,sendData.Length,0);
-                        }
-                    }*/
-                    for (int i = 0; i < cpDataPacket.Count; i++) {
-                        if (cpDataPacket[i].chargePileData.cpAddress == address) {
-                            //cpDataPacket[i].clientSocket.Send(sendData, sendData.Length, 0);
-                        }
-                    }
+                    serialPort1.Write(sendData, 0, sendData.Length);
                 }
             }
             
@@ -943,9 +899,11 @@ namespace ChargingPileServer
         private void sendSetTimeData(byte cmdCode)
         {
 
-            //CPSendDataPackage sendDataPack = new CPSendDataPackage();
+            CPSendDataPackage sendDataPack = new CPSendDataPackage();
 
             CPSetSendDataTime sendTimeData = new CPSetSendDataTime();
+            //if (btnListen.Text == "关闭监听") {
+
             if (cbSystemTime.Checked) {
                 sendTimeData.year = DateTime.Now.Year.ToString();
                 sendTimeData.month = DateTime.Now.Month.ToString();
@@ -977,56 +935,28 @@ namespace ChargingPileServer
                 sendTimeData.minute = txtMinute.Text;
                 sendTimeData.second = txtSecond.Text;
             }
-
-            UInt64 address = Convert.ToUInt64(txtChargingPileAddress.Text);
-
-            chargePileDataList.sendDataToChargePile(cmdCode, address, sendTimeData);
-
+            //}
             if (txtChargingPileAddress.Text != "") {
                 UInt64 temp = Convert.ToUInt64(txtChargingPileAddress.Text);
-               // byte[] sendData = sendDataPack.sendTimeDataPackage(cmdCode, sendTimeData,temp);
+                byte[] sendData = sendDataPack.sendTimeDataPackage(cmdCode, sendTimeData,temp);
 
                 if (true == serialPort1.IsOpen) {
-                   // serialPort1.Write(sendData, 0, sendData.Length);
+                    serialPort1.Write(sendData, 0, sendData.Length);
                 }
 
                 if (btnListen.Text == "关闭监听") {
-                    // 打开了监听
-                   /* UInt64 address = Convert.ToUInt64(txtChargingPileAddress.Text);
-                    
-                    for (int i = 0; i < cpDevice.Count; i++) {
-                        if (cpDevice[i].chargePileMachineAddress == address) {
-                            cpDevice[i].clientSocket.Send(sendData,sendData.Length,0);
-                        }
-                    }
-                    for (int i = 0; i < cpDevice.Count; i++) {
-                        if (cpDataPacket[i].chargePileData.cpAddress == address) {
-                            cpDataPacket[i].clientSocket.Send(sendData, sendData.Length, 0);
-                        }
-                    }*/
-                    
+                    UInt64 address = Convert.ToUInt64(txtChargingPileAddress.Text);
+                    chargePileDataList.sendDataToChargePile(cmdCode, address, sendTimeData);
                 }
-
 
             } else {
-               // byte[] sendData = sendDataPack.sendTimeDataPackage(cmdCode, sendTimeData);
+                byte[] sendData = sendDataPack.sendTimeDataPackage(cmdCode, sendTimeData);
                 if (true == serialPort1.IsOpen) {
-                    //serialPort1.Write(sendData, 0, sendData.Length);
+                    serialPort1.Write(sendData, 0, sendData.Length);
                 }
                 if (btnListen.Text == "关闭监听") {
-                    // 打开了监听
-                    /* UInt64 address = 0x1122334455667788;
-                   
-                    for (int i = 0; i < cpDevice.Count; i++) {
-                        if (cpDevice[i].chargePileMachineAddress == address) {
-                            cpDevice[i].clientSocket.Send(sendData,sendData.Length,0);
-                        }
-                    }
-                    for (int i = 0; i < cpDevice.Count; i++) {
-                        if (cpDataPacket[i].chargePileData.cpAddress == address) {
-                            cpDataPacket[i].clientSocket.Send(sendData, sendData.Length, 0);
-                        }
-                    }*/
+                    UInt64 address = Convert.ToUInt64(txtChargingPileAddress.Text);
+                    chargePileDataList.sendDataToChargePile(cmdCode, address, sendTimeData);
                 }
             }
 
@@ -1065,14 +995,14 @@ namespace ChargingPileServer
 
             CPSetSendDataRate sendRataData = new CPSetSendDataRate();
 
-//             sendRataData.cpPointPrice = Convert.ToUInt32(txtRatePointPrice.Text);
-//             sendRataData.cpPeakPrice = Convert.ToUInt32(txtRatePeakPrice.Text);
-//             sendRataData.cpFlatPrice = Convert.ToUInt32(txtRateFlatPrice.Text);
-//             sendRataData.cpVallPrice = Convert.ToUInt32(txtRateValleyPrice.Text);
-
-
-            UInt64 address = Convert.ToUInt64(txtChargingPileAddress.Text);
-            chargePileDataList.sendDataToChargePile(cmdCode, address, sendRataData);
+            try {
+                sendRataData.cpPointPriceD = Convert.ToDouble(txtRatePointPrice.Text);
+                sendRataData.cpPeakPriceD = Convert.ToDouble(txtRatePeakPrice.Text);
+                sendRataData.cpFlatPriceD = Convert.ToDouble(txtRateFlatPrice.Text);
+                sendRataData.cpVallPriceD = Convert.ToDouble(txtRateValleyPrice.Text);
+            } catch (Exception ex) {
+                MessageBox.Show("输入数据有误！{0}", ex.Message);
+            }
             
             if (txtChargingPileAddress.Text != "") {
                 UInt64 temp = Convert.ToUInt64(txtChargingPileAddress.Text);
@@ -1080,103 +1010,67 @@ namespace ChargingPileServer
                 byte[] sendData = sendDataPack.sendRateDataPackage(cmdCode, sendRataData,temp);
 
                 if (true == serialPort1.IsOpen) {
-
                     serialPort1.Write(sendData, 0, sendData.Length);
-                }
-                if (btnListen.Text == "关闭监听") {
-                    // 打开了监听
-                    //UInt64 address = Convert.ToUInt64(txtChargingPileAddress.Text);
-                    /*
-                    for (int i = 0; i < cpDevice.Count; i++) {
-                        if (cpDevice[i].chargePileMachineAddress == address) {
-                            cpDevice[i].clientSocket.Send(sendData,sendData.Length,0);
-                        }
-                    }
-                    for (int i = 0; i < cpDevice.Count; i++) {
-                        if (cpDataPacket[i].chargePileData.cpAddress == address) {
-                            cpDataPacket[i].clientSocket.Send(sendData, sendData.Length, 0);
-                        }
-                    }*/
                 }
             } else {
                 byte[] sendData = sendDataPack.sendRateDataPackage(cmdCode, sendRataData);
                 if (true == serialPort1.IsOpen) {
                     serialPort1.Write(sendData, 0, sendData.Length);
                 }
-                if (btnListen.Text == "关闭监听") {
-                    // 打开了监听
-                   /* UInt64 address = 0x1122334455667788;
-                    
-                    for (int i = 0; i < cpDevice.Count; i++) {
-                        if (cpDevice[i].chargePileMachineAddress == address) {
-                            cpDevice[i].clientSocket.Send(sendData,sendData.Length,0);
-                        }
-                    }
-                    for (int i = 0; i < cpDevice.Count; i++) {
-                        if (cpDataPacket[i].chargePileData.cpAddress == address) {
-                            cpDataPacket[i].clientSocket.Send(sendData, sendData.Length, 0);
-                        }
-                    }*/
-                }
-
             }
-
-            
-
-            
-
             
         }
-        private void btnSetPrice_Click(object sender, EventArgs e)
-        {
-            //sendRateData(0x22);
-            if (txtRatePointPrice.Text == "") {
-                MessageBox.Show("请输入尖电价!");
-                return;
+        private void btnSetPrice_Click(object sender, EventArgs e) {
+            if (btnOpenPort.Text == "关闭串口") {
+                sendRateData(0x22);
             }
-            if (txtRatePeakPrice.Text == "") {
-                MessageBox.Show("请输入峰电价!");
-                return;
-            }
-            if (txtRateFlatPrice.Text == "") {
-                MessageBox.Show("请输入平电价!");
-                return;
-            }
-            if (txtRateValleyPrice.Text == "") {
-                MessageBox.Show("请输入谷电价!");
-                return;
-            }
-            //CPSendDataPackage sendDataPack = new CPSendDataPackage();
+            if (btnListen.Text == "关闭监听") {
+                if (txtRatePointPrice.Text == "") {
+                    MessageBox.Show("请输入尖电价!");
+                    return;
+                }
+                if (txtRatePeakPrice.Text == "") {
+                    MessageBox.Show("请输入峰电价!");
+                    return;
+                }
+                if (txtRateFlatPrice.Text == "") {
+                    MessageBox.Show("请输入平电价!");
+                    return;
+                }
+                if (txtRateValleyPrice.Text == "") {
+                    MessageBox.Show("请输入谷电价!");
+                    return;
+                }
+                CPSetSendDataRate sendRataData = new CPSetSendDataRate();
+                try {
+                    sendRataData.cpPointPriceD = Convert.ToDouble(txtRatePointPrice.Text);
+                    sendRataData.cpPeakPriceD = Convert.ToDouble(txtRatePeakPrice.Text);
+                    sendRataData.cpFlatPriceD = Convert.ToDouble(txtRateFlatPrice.Text);
+                    sendRataData.cpVallPriceD = Convert.ToDouble(txtRateValleyPrice.Text);
+                } catch (Exception ex) {
+                    MessageBox.Show("输入数据有误！{0}", ex.Message);
+                }
 
-            CPSetSendDataRate sendRataData = new CPSetSendDataRate();
-            try {
-                sendRataData.cpPointPriceD = Convert.ToDouble(txtRatePointPrice.Text);
-                sendRataData.cpPeakPriceD = Convert.ToDouble(txtRatePeakPrice.Text);
-                sendRataData.cpFlatPriceD = Convert.ToDouble(txtRateFlatPrice.Text);
-                sendRataData.cpVallPriceD = Convert.ToDouble(txtRateValleyPrice.Text);
-            } catch (Exception ex) {
-                MessageBox.Show("输入数据有误！{0}",ex.Message);
+                if (txtChargingPileAddress.Text == "") {
+                    return;
+                }
+                UInt64 temp = Convert.ToUInt64(txtChargingPileAddress.Text);
+                chargePileDataList.sendDataToChargePile(0x22, temp, sendRataData);
             }
-            
-
-            if (txtChargingPileAddress.Text == "") {
-                return;
-            }
-            UInt64 temp = Convert.ToUInt64(txtChargingPileAddress.Text);
-
-            chargePileDataList.sendDataToChargePile(0x22, temp,sendRataData);
-            
-            
         }
         private void sendCPStateData(byte cmdCode)
         {
             sendHeartFrameData(cmdCode);
         }
-        private void btnCPState_Click(object sender, EventArgs e)
-        {
-            //sendCPStateData(0x23);
-            UInt64 address = Convert.ToUInt64(txtChargingPileAddress.Text);
-            chargePileDataList.sendDataToChargePile(0x23, address);
+        private void btnCPState_Click(object sender, EventArgs e) {
+            if (btnOpenPort.Text == "关闭串口") {
+                sendCPStateData(0x23);
+            }
+            if (btnListen.Text == "关闭监听") {
+                UInt64 address = Convert.ToUInt64(txtChargingPileAddress.Text);
+                chargePileDataList.sendDataToChargePile(0x23, address);
+            }
+            
         }
         private void sendCPStartAndStopData(byte cmdCode,byte para)
         {
@@ -1242,11 +1136,15 @@ namespace ChargingPileServer
         {
             sendHeartFrameData(cmdCode);
         }
-        private void btnCurCharge_Click(object sender, EventArgs e)
-        {
-            //sendCurChargeData(0x25);
-            UInt64 address = Convert.ToUInt64(txtChargingPileAddress.Text);
-            chargePileDataList.sendDataToChargePile(0x25, address);
+        private void btnCurCharge_Click(object sender, EventArgs e) {
+            if (btnOpenPort.Text == "关闭串口") {
+                sendCurChargeData(0x25);
+            }
+            if (btnListen.Text == "关闭监听") {
+                UInt64 address = Convert.ToUInt64(txtChargingPileAddress.Text);
+                chargePileDataList.sendDataToChargePile(0x25, address);
+            }
+            
         }
 
         private void btnPause_Click(object sender, EventArgs e) {
@@ -1488,99 +1386,99 @@ namespace ChargingPileServer
                     float CurrentVOL = data.CurrentVOL;
 
                     float CurrentCur = data.CurrentCur;
-                    try {
-                        if (chargePileDataList.cpDataPacket[i].chargePileMachineAddress
-                                                == Convert.ToUInt64(txtChargingPileAddress.Text)) {
-                            txtValtage.Text = CurrentVOL.ToString();
-                            txtCurrent.Text = CurrentCur.ToString();
-                        }
-                    } catch { }
+//                     try {
+//                         if (chargePileDataList.cpDataPacket[i].chargePileMachineAddress
+//                                                 == Convert.ToUInt64(txtChargingPileAddress.Text)) {
+//                             txtValtage.Text = CurrentVOL.ToString();
+//                             txtCurrent.Text = CurrentCur.ToString();
+//                         }
+//                     } catch { }
                     
                     float OutPower = data.OutPower;
                     float OutQuantity = data.OutQuantity;
                     int ACCTime = data.ACCTime;
                     bool[] CurrentAlarmInfo = data.CurrentAlarmInfo;
 
-                    if (CurrentAlarmInfo[0]) {
-                        textBox2.Text = "、输入过压";
-                    } else {
-                        try {
-                            textBox2.Text = textBox2.Text.Replace("、输入过压","");
-                        } catch { }
-                        
-                    }
-                    if (CurrentAlarmInfo[1]) {
-                        textBox2.Text = "、输出过压";
-                    } else {
-                        try {
-                            textBox2.Text = textBox2.Text.Replace("、输出过压", "");
-                        } catch { }
-                        
-                    }
-                    if (CurrentAlarmInfo[2]) {
-                        textBox2.Text = "、输入欠压";
-                    } else {
-                        try {
-                            textBox2.Text = textBox2.Text.Replace("、输入欠压", "");
-                        } catch { }
-                        
-                    }
-                    if (CurrentAlarmInfo[3]) {
-                        textBox2.Text = "、输出欠压";
-                    } else {
-                        try {
-                            textBox2.Text = textBox2.Text.Replace("、输出欠压", "");
-                        } catch { }
-                        
-                    }
-                    if (CurrentAlarmInfo[4]) {
-                        textBox2.Text = "、输入过流";
-                    } else {
-                        try {
-                            textBox2.Text = textBox2.Text.Replace("、输入过流", "");
-                        } catch { }
-                        
-                    }
-                    if (CurrentAlarmInfo[5]) {
-                        textBox2.Text = "、输出过流";
-                    } else {
-                        try {
-                            textBox2.Text = textBox2.Text.Replace("、输出过流", "");
-                        } catch { }
-                        
-                    }
-                    if (CurrentAlarmInfo[6]) {
-                        textBox2.Text = "、输入欠流";
-                    } else {
-                        try {
-                            textBox2.Text = textBox2.Text.Replace("、输入欠流", "");
-                        } catch { }
-                        
-                    }
-                    if (CurrentAlarmInfo[7]) {
-                        textBox2.Text = "、输出欠流";
-                    } else {
-                        try {
-                            textBox2.Text = textBox2.Text.Replace("、输出欠流", "");
-                        } catch { }
-                        
-                    }
-                    if (CurrentAlarmInfo[8]) {
-                        textBox2.Text = "、温度过高";
-                    } else {
-                        try {
-                            textBox2.Text = textBox2.Text.Replace("、温度过高", "");
-                        } catch { }
-                        
-                    }
-                    if (CurrentAlarmInfo[9]) {
-                        textBox2.Text = "、输出短路";
-                    } else {
-                        try {
-                            textBox2.Text = textBox2.Text.Replace("、输入短路", "");
-                        } catch { }
-                        
-                    }
+//                     if (CurrentAlarmInfo[0]) {
+//                         textBox2.Text = "、输入过压";
+//                     } else {
+//                         try {
+//                             textBox2.Text = textBox2.Text.Replace("、输入过压","");
+//                         } catch { }
+//                         
+//                     }
+//                     if (CurrentAlarmInfo[1]) {
+//                         textBox2.Text = "、输出过压";
+//                     } else {
+//                         try {
+//                             textBox2.Text = textBox2.Text.Replace("、输出过压", "");
+//                         } catch { }
+//                         
+//                     }
+//                     if (CurrentAlarmInfo[2]) {
+//                         textBox2.Text = "、输入欠压";
+//                     } else {
+//                         try {
+//                             textBox2.Text = textBox2.Text.Replace("、输入欠压", "");
+//                         } catch { }
+//                         
+//                     }
+//                     if (CurrentAlarmInfo[3]) {
+//                         textBox2.Text = "、输出欠压";
+//                     } else {
+//                         try {
+//                             textBox2.Text = textBox2.Text.Replace("、输出欠压", "");
+//                         } catch { }
+//                         
+//                     }
+//                     if (CurrentAlarmInfo[4]) {
+//                         textBox2.Text = "、输入过流";
+//                     } else {
+//                         try {
+//                             textBox2.Text = textBox2.Text.Replace("、输入过流", "");
+//                         } catch { }
+//                         
+//                     }
+//                     if (CurrentAlarmInfo[5]) {
+//                         textBox2.Text = "、输出过流";
+//                     } else {
+//                         try {
+//                             textBox2.Text = textBox2.Text.Replace("、输出过流", "");
+//                         } catch { }
+//                         
+//                     }
+//                     if (CurrentAlarmInfo[6]) {
+//                         textBox2.Text = "、输入欠流";
+//                     } else {
+//                         try {
+//                             textBox2.Text = textBox2.Text.Replace("、输入欠流", "");
+//                         } catch { }
+//                         
+//                     }
+//                     if (CurrentAlarmInfo[7]) {
+//                         textBox2.Text = "、输出欠流";
+//                     } else {
+//                         try {
+//                             textBox2.Text = textBox2.Text.Replace("、输出欠流", "");
+//                         } catch { }
+//                         
+//                     }
+//                     if (CurrentAlarmInfo[8]) {
+//                         textBox2.Text = "、温度过高";
+//                     } else {
+//                         try {
+//                             textBox2.Text = textBox2.Text.Replace("、温度过高", "");
+//                         } catch { }
+//                         
+//                     }
+//                     if (CurrentAlarmInfo[9]) {
+//                         textBox2.Text = "、输出短路";
+//                     } else {
+//                         try {
+//                             textBox2.Text = textBox2.Text.Replace("、输入短路", "");
+//                         } catch { }
+//                         
+//                     }
 
 
 
@@ -1838,6 +1736,10 @@ namespace ChargingPileServer
             }
         }
 #endregion
+
+        private void panelSetTime_Paint(object sender, PaintEventArgs e) {
+
+        }
         #endregion
     }
 }

@@ -113,3 +113,4 @@ E:\充电桩\ChargePile\chargePileServer\充电桩服务器\obj\Debug\ChargingPi
 E:\充电桩\ChargePile\chargePileServer\充电桩服务器\obj\Debug\ChargingPileServer.csproj.GenerateResource.Cache
 E:\充电桩\ChargePile\chargePileServer\充电桩服务器\obj\Debug\ChargingPileServer.exe
 E:\充电桩\ChargePile\chargePileServer\充电桩服务器\obj\Debug\ChargingPileServer.pdb
+E:\充电桩\ChargePile\chargePileServer\充电桩服务器\obj\Debug\ChargingPileServer.csprojResolveAssemblyReference.cache

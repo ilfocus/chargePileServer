@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MonitoringInterface));
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("充电桩");
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("充电桩");
             this.btnOpenPort = new System.Windows.Forms.Button();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
@@ -56,6 +56,8 @@
             this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
             this.TS_LableSystemTime = new System.Windows.Forms.ToolStripLabel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.labeltx = new System.Windows.Forms.Label();
             this.picBox1 = new System.Windows.Forms.PictureBox();
             this.TimeSendData = new System.Windows.Forms.Timer(this.components);
@@ -184,8 +186,6 @@
             this.checkStateTime = new System.Windows.Forms.Timer(this.components);
             this.heartLedTime = new System.Windows.Forms.Timer(this.components);
             this.tvChargePile = new System.Windows.Forms.TreeView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBox1)).BeginInit();
@@ -429,6 +429,20 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(973, 38);
             this.panel1.TabIndex = 34;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(323, 12);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(460, 21);
+            this.textBox2.TabIndex = 469;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(199, 12);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 21);
+            this.textBox1.TabIndex = 468;
             // 
             // labeltx
             // 
@@ -793,6 +807,7 @@
             this.panelSetTime.Name = "panelSetTime";
             this.panelSetTime.Size = new System.Drawing.Size(190, 202);
             this.panelSetTime.TabIndex = 466;
+            this.panelSetTime.Paint += new System.Windows.Forms.PaintEventHandler(this.panelSetTime_Paint);
             // 
             // cbSystemTime
             // 
@@ -1654,26 +1669,12 @@
             // 
             this.tvChargePile.Location = new System.Drawing.Point(0, 79);
             this.tvChargePile.Name = "tvChargePile";
-            treeNode5.Name = "节点0";
-            treeNode5.Text = "充电桩";
+            treeNode1.Name = "节点0";
+            treeNode1.Text = "充电桩";
             this.tvChargePile.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode5});
+            treeNode1});
             this.tvChargePile.Size = new System.Drawing.Size(177, 523);
             this.tvChargePile.TabIndex = 501;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(199, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 21);
-            this.textBox1.TabIndex = 468;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(323, 12);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(460, 21);
-            this.textBox2.TabIndex = 469;
             // 
             // MonitoringInterface
             // 
