@@ -1130,7 +1130,9 @@ namespace ChargingPileServer
             // 0x02,pause charge
             // 0x03,stop charge
             // 0x22,recover charge
-            sendCPStartAndStopData(0x24,0x01);
+            //sendCPStartAndStopData(0x24,0x01);
+            UInt64 temp = Convert.ToUInt64(txtChargingPileAddress.Text);
+            chargePileDataList.sendDataToChargePile(0x24, temp, 0x01);
         }
         private void sendCurChargeData(byte cmdCode)
         {
@@ -1152,7 +1154,9 @@ namespace ChargingPileServer
             // 0x02,pause charge
             // 0x03,stop charge
             // 0x22,recover charge
-            sendCPStartAndStopData(0x24, 0x02);
+            //sendCPStartAndStopData(0x24, 0x02);
+            UInt64 temp = Convert.ToUInt64(txtChargingPileAddress.Text);
+            chargePileDataList.sendDataToChargePile(0x24, temp, 0x02);
         }
 
         private void btnRecover_Click(object sender, EventArgs e) {
@@ -1485,6 +1489,7 @@ namespace ChargingPileServer
                     float TotalQuantity = data.TotalQuantity;
                     float TotalFee = data.TotalFee;
                     //Console.WriteLine("--------------TotalFee----------" + TotalFee);
+                    
                     float JianQ = data.JianQ;
                     float JianPrice = data.JianPrice;
                     float JianFee = data.JianFee;
@@ -1499,6 +1504,9 @@ namespace ChargingPileServer
                     float GUQ = data.GUQ;
                     float GUPrice = data.GUPrice;
                     float GUFee = data.GUFee;
+
+//                     Console.WriteLine("---- 服务器接收到数据---地址：{0}，尖电价：{1}，峰电价：{2}，平电价：{3}，谷电价：{4}",
+//                                     data.chargePileMachineAddress,JianPrice,fengPrice,PingPrice,GUPrice);
 
                     // 以下数据采用默认值
                     float BatterySoc = data.BatterySoc;
