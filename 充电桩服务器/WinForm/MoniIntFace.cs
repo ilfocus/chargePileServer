@@ -187,10 +187,10 @@ namespace ChargingPileServer
         /// </summary>
 
 
-        private void loadCpServerDll() {
-            test test = new test();
-            test.showMessage();
-        }
+//         private void loadCpServerDll() {
+//             test test = new test();
+//             test.showMessage();
+//         }
 
         /*************************************************************************/
         /*  
@@ -278,7 +278,7 @@ namespace ChargingPileServer
             picBox1.Image = Resources.green;
 
             // 加载dll文件
-            loadCpServerDll();
+            //loadCpServerDll();
 
             //Button btn = new Button();
             //btn.Text = "控钮测试";
@@ -355,48 +355,53 @@ namespace ChargingPileServer
             //int a =  10;
             //picBox1.Image = Properties.Resources.red;
             //txtCurrent.Text = a.ToString();
- 
+            
+
             if (btnOpenPort.Text == "打开串口") {
                 //this.serialPort1.Open();//打开串口，用的是控件！
 
                 this.btnOpenPort.Text = "关闭串口";
+                if (chargePileDataList == null) {
+                    chargePileDataList = new chargePileDataPacketList(chargePileDataPacketList.ComMethod.SerialPort);
+                }
+                return;
                 //serialPort1.PortName = frmSetComPara.combSerialPort.Text;               //给出串口号，字符型
 
-                serialPort1.PortName = "COM2";
-                serialPort1.BaudRate = int.Parse(frmSetComPara.combBaudRate.Text);
-                serialPort1.DataBits = int.Parse(frmSetComPara.combDataBit.Text);
-                string szStopBits = frmSetComPara.combStopBits.SelectedItem.ToString();
-
-                switch (szStopBits) {
-                    case "1":
-                        serialPort1.StopBits = StopBits.One;
-                        break;
-                    case "1.5":
-                        serialPort1.StopBits = StopBits.OnePointFive;
-                        break;
-                    case "2":
-                        serialPort1.StopBits = StopBits.Two;
-                        break;
-                    default:
-                        serialPort1.StopBits = StopBits.One;
-                        break;
-                }
-                serialPort1.Parity = (Parity)Enum.Parse(typeof(Parity), frmSetComPara.SerialParity.SelectedItem.ToString());
-                //此句要好好理解。Enum  提供一个指向枚举器（该枚举器可枚举复合名字对象的组件）的指针。
-                serialPort1.Open();
-                return;
+//                 serialPort1.PortName = "COM1";
+//                 serialPort1.BaudRate = int.Parse(frmSetComPara.combBaudRate.Text);
+//                 serialPort1.DataBits = int.Parse(frmSetComPara.combDataBit.Text);
+//                 string szStopBits = frmSetComPara.combStopBits.SelectedItem.ToString();
+// 
+//                 switch (szStopBits) {
+//                     case "1":
+//                         serialPort1.StopBits = StopBits.One;
+//                         break;
+//                     case "1.5":
+//                         serialPort1.StopBits = StopBits.OnePointFive;
+//                         break;
+//                     case "2":
+//                         serialPort1.StopBits = StopBits.Two;
+//                         break;
+//                     default:
+//                         serialPort1.StopBits = StopBits.One;
+//                         break;
+//                 }
+//                 serialPort1.Parity = (Parity)Enum.Parse(typeof(Parity), frmSetComPara.SerialParity.SelectedItem.ToString());
+//                 //此句要好好理解。Enum  提供一个指向枚举器（该枚举器可枚举复合名字对象的组件）的指针。
+//                 serialPort1.Open();
+//                 return;
             }
             if (btnOpenPort.Text == "关闭串口") {
-                serialPort1.Close();
+                //serialPort1.Close();
                 btnAutoCheck.Text = "自动查看";
                 btnCheckChargeInfo.Text = "自动查看";
                 this.btnOpenPort.Text = "打开串口";
             }
-            if (serialPort1.IsOpen == true) {
-                MessageBox.Show("串口已打开");
-            } else {
-                MessageBox.Show("串口已关闭");
-            }
+//             if (serialPort1.IsOpen == true) {
+//                 MessageBox.Show("串口已打开");
+//             } else {
+//                 MessageBox.Show("串口已关闭");
+//             }
         }
         private void TS_BtnSetComPara_Click(object sender, EventArgs e)
         {
@@ -1064,8 +1069,13 @@ namespace ChargingPileServer
         }
         private void btnCPState_Click(object sender, EventArgs e) {
             if (btnOpenPort.Text == "关闭串口") {
-                sendCPStateData(0x23);
+                //sendCPStateData(0x23);
+
+                UInt64 address = Convert.ToUInt64(txtChargingPileAddress.Text);
+                chargePileDataList.sendDataToChargePile(chargePileDataPacketList.ComMethod.SerialPort, 0x23, address);
             }
+
+
             if (btnListen.Text == "关闭监听") {
                 UInt64 address = Convert.ToUInt64(txtChargingPileAddress.Text);
                 chargePileDataList.sendDataToChargePile(0x23, address);
@@ -1403,89 +1413,13 @@ namespace ChargingPileServer
                     int ACCTime = data.ACCTime;
                     bool[] CurrentAlarmInfo = data.CurrentAlarmInfo;
 
-//                     if (CurrentAlarmInfo[0]) {
-//                         textBox2.Text = "、输入过压";
-//                     } else {
-//                         try {
-//                             textBox2.Text = textBox2.Text.Replace("、输入过压","");
-//                         } catch { }
-//                         
-//                     }
-//                     if (CurrentAlarmInfo[1]) {
-//                         textBox2.Text = "、输出过压";
-//                     } else {
-//                         try {
-//                             textBox2.Text = textBox2.Text.Replace("、输出过压", "");
-//                         } catch { }
-//                         
-//                     }
-//                     if (CurrentAlarmInfo[2]) {
-//                         textBox2.Text = "、输入欠压";
-//                     } else {
-//                         try {
-//                             textBox2.Text = textBox2.Text.Replace("、输入欠压", "");
-//                         } catch { }
-//                         
-//                     }
-//                     if (CurrentAlarmInfo[3]) {
-//                         textBox2.Text = "、输出欠压";
-//                     } else {
-//                         try {
-//                             textBox2.Text = textBox2.Text.Replace("、输出欠压", "");
-//                         } catch { }
-//                         
-//                     }
-//                     if (CurrentAlarmInfo[4]) {
-//                         textBox2.Text = "、输入过流";
-//                     } else {
-//                         try {
-//                             textBox2.Text = textBox2.Text.Replace("、输入过流", "");
-//                         } catch { }
-//                         
-//                     }
-//                     if (CurrentAlarmInfo[5]) {
-//                         textBox2.Text = "、输出过流";
-//                     } else {
-//                         try {
-//                             textBox2.Text = textBox2.Text.Replace("、输出过流", "");
-//                         } catch { }
-//                         
-//                     }
-//                     if (CurrentAlarmInfo[6]) {
-//                         textBox2.Text = "、输入欠流";
-//                     } else {
-//                         try {
-//                             textBox2.Text = textBox2.Text.Replace("、输入欠流", "");
-//                         } catch { }
-//                         
-//                     }
-//                     if (CurrentAlarmInfo[7]) {
-//                         textBox2.Text = "、输出欠流";
-//                     } else {
-//                         try {
-//                             textBox2.Text = textBox2.Text.Replace("、输出欠流", "");
-//                         } catch { }
-//                         
-//                     }
-//                     if (CurrentAlarmInfo[8]) {
-//                         textBox2.Text = "、温度过高";
-//                     } else {
-//                         try {
-//                             textBox2.Text = textBox2.Text.Replace("、温度过高", "");
-//                         } catch { }
-//                         
-//                     }
-//                     if (CurrentAlarmInfo[9]) {
-//                         textBox2.Text = "、输出短路";
-//                     } else {
-//                         try {
-//                             textBox2.Text = textBox2.Text.Replace("、输入短路", "");
-//                         } catch { }
-//                         
-//                     }
-
-
-
+                    Console.Write("---- 服务器接收到故障数据---地址：" + data.chargePileMachineAddress + "故障为:");
+                    for (int j = 0; j < CurrentAlarmInfo.Length; j++) {
+                        if (CurrentAlarmInfo[j]) {
+                            Console.Write(j + ",");
+                        }
+                    }
+                    Console.WriteLine("");
                     float TotalQuantity = data.TotalQuantity;
                     float TotalFee = data.TotalFee;
                     //Console.WriteLine("--------------TotalFee----------" + TotalFee);
@@ -1505,7 +1439,7 @@ namespace ChargingPileServer
                     float GUPrice = data.GUPrice;
                     float GUFee = data.GUFee;
 
-//                     Console.WriteLine("---- 服务器接收到数据---地址：{0}，尖电价：{1}，峰电价：{2}，平电价：{3}，谷电价：{4}",
+//                  Console.WriteLine("---- 服务器接收到数据---地址：{0}，尖电价：{1}，峰电价：{2}，平电价：{3}，谷电价：{4}",
 //                                     data.chargePileMachineAddress,JianPrice,fengPrice,PingPrice,GUPrice);
 
                     // 以下数据采用默认值

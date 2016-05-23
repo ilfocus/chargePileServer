@@ -414,7 +414,7 @@
             // TS_LableSystemTime
             // 
             this.TS_LableSystemTime.AutoSize = false;
-            this.TS_LableSystemTime.Font = new System.Drawing.Font("幼圆", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.TS_LableSystemTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.TS_LableSystemTime.Name = "TS_LableSystemTime";
             this.TS_LableSystemTime.Size = new System.Drawing.Size(230, 56);
             this.TS_LableSystemTime.Text = "toolStripLabel1";
@@ -477,7 +477,7 @@
             // updateFrameTimer
             // 
             this.updateFrameTimer.Enabled = true;
-            this.updateFrameTimer.Interval = 500;
+            this.updateFrameTimer.Interval = 1000;
             this.updateFrameTimer.Tick += new System.EventHandler(this.updateFrameTimer_Tick);
             // 
             // skinEngine2
