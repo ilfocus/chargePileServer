@@ -940,17 +940,15 @@ namespace ChargingPileServer
                 sendTimeData.minute = txtMinute.Text;
                 sendTimeData.second = txtSecond.Text;
             }
-            //}
             if (txtChargingPileAddress.Text != "") {
                 UInt64 temp = Convert.ToUInt64(txtChargingPileAddress.Text);
-                byte[] sendData = sendDataPack.sendTimeDataPackage(cmdCode, sendTimeData,temp);
-
-                if (true == serialPort1.IsOpen) {
-                    serialPort1.Write(sendData, 0, sendData.Length);
+                byte[] sendData = sendDataPack.sendTimeDataPackage(cmdCode, sendTimeData, temp);
+                try  {
                     chargePileDataList.sendDataToChargePile(chargePileDataPacketList.ComMethod.SerialPort,
                                                             cmdCode, temp, sendTimeData);
+                } catch (Exception ex) {
+                    Console.WriteLine(ex.Message);
                 }
-
                 if (btnListen.Text == "关闭监听") {
                     UInt64 address = Convert.ToUInt64(txtChargingPileAddress.Text);
                     chargePileDataList.sendDataToChargePile(cmdCode, address, sendTimeData);
@@ -1014,11 +1012,13 @@ namespace ChargingPileServer
             if (txtChargingPileAddress.Text != "") {
                 UInt64 temp = Convert.ToUInt64(txtChargingPileAddress.Text);
 
-                byte[] sendData = sendDataPack.sendRateDataPackage(cmdCode, sendRataData,temp);
+                byte[] sendData = sendDataPack.sendRateDataPackage(cmdCode, sendRataData, temp);
 
-                if (true == serialPort1.IsOpen) {
+                try {
                     chargePileDataList.sendDataToChargePile(chargePileDataPacketList.ComMethod.SerialPort,
                                             0x22, temp, sendRataData);
+                } catch (Exception ex) {
+                    Console.WriteLine(ex.Message);
                 }
             } else {
                 byte[] sendData = sendDataPack.sendRateDataPackage(cmdCode, sendRataData);
@@ -1074,11 +1074,13 @@ namespace ChargingPileServer
             if (btnOpenPort.Text == "关闭串口") {
                 //sendCPStateData(0x23);
 
-                UInt64 address = Convert.ToUInt64(txtChargingPileAddress.Text);
-                chargePileDataList.sendDataToChargePile(chargePileDataPacketList.ComMethod.SerialPort, 0x23, address);
+                try {
+                    UInt64 address = Convert.ToUInt64(txtChargingPileAddress.Text);
+                    chargePileDataList.sendDataToChargePile(chargePileDataPacketList.ComMethod.SerialPort, 0x23, address);
+                } catch (Exception ex) {
+                    MessageBox.Show(ex.Message);
+                }
             }
-
-
             if (btnListen.Text == "关闭监听") {
                 UInt64 address = Convert.ToUInt64(txtChargingPileAddress.Text);
                 chargePileDataList.sendDataToChargePile(0x23, address);
