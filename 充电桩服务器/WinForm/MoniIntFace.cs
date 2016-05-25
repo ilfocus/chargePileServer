@@ -947,6 +947,8 @@ namespace ChargingPileServer
 
                 if (true == serialPort1.IsOpen) {
                     serialPort1.Write(sendData, 0, sendData.Length);
+                    chargePileDataList.sendDataToChargePile(chargePileDataPacketList.ComMethod.SerialPort,
+                                                            cmdCode, temp, sendTimeData);
                 }
 
                 if (btnListen.Text == "关闭监听") {
@@ -1015,7 +1017,8 @@ namespace ChargingPileServer
                 byte[] sendData = sendDataPack.sendRateDataPackage(cmdCode, sendRataData,temp);
 
                 if (true == serialPort1.IsOpen) {
-                    serialPort1.Write(sendData, 0, sendData.Length);
+                    chargePileDataList.sendDataToChargePile(chargePileDataPacketList.ComMethod.SerialPort,
+                                            0x22, temp, sendRataData);
                 }
             } else {
                 byte[] sendData = sendDataPack.sendRateDataPackage(cmdCode, sendRataData);
