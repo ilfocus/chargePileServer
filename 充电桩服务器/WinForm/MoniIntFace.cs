@@ -1387,15 +1387,42 @@ namespace ChargingPileServer
                 //Console.WriteLine("接收到了数据！");
                 for (int i = 0; i < chargePileDataList.cpDataPacket.Count; i++) {
                     chargePileDataPacket data = chargePileDataList.cpDataPacket[i];
- 
+
+                    BmobToolClass save = new BmobToolClass();   // 把数据保存到bmob中
+
                     CPGetState.CPCurrentState CurrentState = data.CurrentState;
+                    int state = 0;
                     switch (CurrentState) {
-                        case CPGetState.CPCurrentState.FaultState: { textBox1.Text = "故障状态"; break; }
-                        case CPGetState.CPCurrentState.FreeState: { textBox1.Text = "空闲状态"; break; }
-                        case CPGetState.CPCurrentState.ChargeState: { textBox1.Text = "充电状态"; break; }
-                        case CPGetState.CPCurrentState.ParkingState: { textBox1.Text = "停车状态"; break; }
-                        case CPGetState.CPCurrentState.OrderState: { textBox1.Text = "预约状态"; break; }
-                        case CPGetState.CPCurrentState.MainTainState: { textBox1.Text = "维护状态"; break; }
+                        case CPGetState.CPCurrentState.FaultState: { 
+                            textBox1.Text = "故障状态";
+                            state = 0;
+                            break; 
+                        }
+                        case CPGetState.CPCurrentState.FreeState: { 
+                            textBox1.Text = "空闲状态";
+                            state = 1;
+                            break;
+                        }
+                        case CPGetState.CPCurrentState.ChargeState: { 
+                            textBox1.Text = "充电状态";
+                            state = 2;
+                            break; 
+                        }
+                        case CPGetState.CPCurrentState.ParkingState: { 
+                            textBox1.Text = "停车状态";
+                            state = 3;
+                            break; 
+                        }
+                        case CPGetState.CPCurrentState.OrderState: { 
+                            textBox1.Text = "预约状态";
+                            state = 4;
+                            break; 
+                        }
+                        case CPGetState.CPCurrentState.MainTainState: { 
+                            textBox1.Text = "维护状态";
+                            state = 5;
+                            break; 
+                        }
                     }
 
                     byte CommState = data.CommState;
@@ -1403,50 +1430,73 @@ namespace ChargingPileServer
                     int ChargeTime = data.ChargeTime;
                     int RemainTime = data.RemainTime;
                     float CurrentVOL = data.CurrentVOL;
-
                     float CurrentCur = data.CurrentCur;
-//                     try {
-//                         if (chargePileDataList.cpDataPacket[i].chargePileMachineAddress
-//                                                 == Convert.ToUInt64(txtChargingPileAddress.Text)) {
-//                             txtValtage.Text = CurrentVOL.ToString();
-//                             txtCurrent.Text = CurrentCur.ToString();
-//                         }
-//                     } catch { }
-                    
                     float OutPower = data.OutPower;
                     float OutQuantity = data.OutQuantity;
                     int ACCTime = data.ACCTime;
                     bool[] CurrentAlarmInfo = data.CurrentAlarmInfo;
+                    //CurrentAlarmInfoClass alarm = new CurrentAlarmInfoClass();
+                    
 
-                    Console.Write("---- 服务器接收到故障数据---地址：" + data.chargePileMachineAddress + "故障为:");
-                    for (int j = 0; j < CurrentAlarmInfo.Length; j++) {
-                        if (CurrentAlarmInfo[j]) {
-                            Console.Write(j + ",");
-                        }
-                    }
-                    Console.WriteLine("");
+                    save.chargePileData.ChargePileAddress = (long)data.chargePileMachineAddress;
+                    save.chargePileData.CurrentState = state;
+                    save.chargePileData.CommState = CommState;
+                    save.chargePileData.CurrentSOC = CurrentSOC;
+                    save.chargePileData.ChargeTime = ChargeTime;
+                    save.chargePileData.RemainTime = RemainTime;
+                    save.chargePileData.CurrentVOL = CurrentVOL;
+                    save.chargePileData.CurrentCur = CurrentCur;
+                    save.chargePileData.OutPower = OutPower;
+                    save.chargePileData.OutQuantity = OutQuantity;
+                    save.chargePileData.ACCTime = ACCTime;
+
+
+                    save.chargePileData.cpInOverVol = CurrentAlarmInfo[0];
+                    save.chargePileData.cpOutOverVol = CurrentAlarmInfo[1];
+                    save.chargePileData.cpInUnderVol = CurrentAlarmInfo[2];
+                    save.chargePileData.cpOutUnderVol = CurrentAlarmInfo[3];
+                    save.chargePileData.cpInOverCur = CurrentAlarmInfo[4];
+                    save.chargePileData.cpOutOverCur = CurrentAlarmInfo[5];
+                    save.chargePileData.cpInUnderCur = CurrentAlarmInfo[6];
+                    save.chargePileData.cpOutUnderCur = CurrentAlarmInfo[7];
+                    save.chargePileData.cpTempHigh = CurrentAlarmInfo[8];
+                    save.chargePileData.cpOutShort = CurrentAlarmInfo[9];
+                    //save.chargePileData.CurrentAlarmInfo = alarm;
+//                     Console.Write("---- 服务器接收到故障数据---地址：" + data.chargePileMachineAddress + "故障为:");
+//                     for (int j = 0; j < CurrentAlarmInfo.Length; j++) {
+//                         if (CurrentAlarmInfo[j]) {
+//                             Console.Write(j + ",");
+//                         }
+//                     }
+//                     Console.WriteLine("");
                     float TotalQuantity = data.TotalQuantity;
                     float TotalFee = data.TotalFee;
-                    //Console.WriteLine("--------------TotalFee----------" + TotalFee);
-                    
                     float JianQ = data.JianQ;
                     float JianPrice = data.JianPrice;
                     float JianFee = data.JianFee;
                     float fengQ = data.fengQ;
                     float fengPrice = data.fengPrice;
                     float fengFee = data.fengFee;
-
                     float PingQ = data.PingQ;
                     float PingPrice = data.PingPrice;
                     float PingFee = data.PingFee;
-
                     float GUQ = data.GUQ;
                     float GUPrice = data.GUPrice;
                     float GUFee = data.GUFee;
-
-//                  Console.WriteLine("---- 服务器接收到数据---地址：{0}，尖电价：{1}，峰电价：{2}，平电价：{3}，谷电价：{4}",
-//                                     data.chargePileMachineAddress,JianPrice,fengPrice,PingPrice,GUPrice);
-
+                    save.chargePileData.TotalQuantity = TotalQuantity;
+                    save.chargePileData.TotalFee = TotalFee;
+                    save.chargePileData.JianQ = JianQ;
+                    save.chargePileData.JianPrice = JianPrice;
+                    save.chargePileData.JianFee = JianFee;
+                    save.chargePileData.fengQ = fengQ;
+                    save.chargePileData.fengPrice = fengPrice;
+                    save.chargePileData.fengFee = fengFee;
+                    save.chargePileData.PingQ = PingQ;
+                    save.chargePileData.PingPrice = PingPrice;
+                    save.chargePileData.PingFee = PingFee;
+                    save.chargePileData.GUQ = GUQ;
+                    save.chargePileData.GUPrice = GUPrice;
+                    save.chargePileData.GUFee = GUFee;
                     // 以下数据采用默认值
                     float BatterySoc = data.BatterySoc;
                     bool BMSState = data.BMSState;
@@ -1467,6 +1517,33 @@ namespace ChargingPileServer
                     bool SystemParaAlarm = data.SystemParaAlarm;
                     bool FanFailFault = data.FanFailFault;
                     bool SampleTempFault = data.SampleTempFault;/**/
+
+                    save.chargePileData.BatterySoc = BatterySoc;
+                    save.chargePileData.BMSState = BMSState;
+                    save.chargePileData.PortVol = PortVol;
+                    save.chargePileData.CellNum = CellNum;
+                    save.chargePileData.TempNum = TempNum;
+                    save.chargePileData.MaxVol = MaxVol;
+                    save.chargePileData.MaxCTemp = MaxCTemp;
+                    save.chargePileData.CellMaxVol = CellMaxVol;
+                    save.chargePileData.CellPos = CellPos;
+                    save.chargePileData.CellMinVol = CellMinVol;
+                    save.chargePileData.MaxTemp = MaxTemp;
+                    save.chargePileData.MinTemp = MinTemp;
+                    save.chargePileData.VolDataAlarm = VolDataAlarm;
+                    save.chargePileData.SampleVolFault = SampleVolFault;
+                    save.chargePileData.UvorOvAlarm = UvorOvAlarm;
+                    save.chargePileData.SystemParaAlarm = SystemParaAlarm;
+                    save.chargePileData.FanFailFault = FanFailFault;
+                    save.chargePileData.SampleTempFault = SampleTempFault;
+                    try {
+                        save.saveData(save.chargePileData);
+                        Console.WriteLine("保存数据到bmob！");
+                    } catch (Exception ex) {
+                        MessageBox.Show(ex.Message);
+                    }
+                    
+                    
                 }
 
             }

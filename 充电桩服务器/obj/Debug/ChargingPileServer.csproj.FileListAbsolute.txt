@@ -86,7 +86,6 @@ Y:\chargePile\chargePileServer\充电桩服务器\bin\Debug\ChargingPileServer.p
 Y:\chargePile\chargePileServer\充电桩服务器\bin\Debug\CPServer.dll
 Y:\chargePile\chargePileServer\充电桩服务器\bin\Debug\wyb7led.dll
 Y:\chargePile\chargePileServer\充电桩服务器\bin\Debug\CPServer.pdb
-Y:\chargePile\chargePileServer\充电桩服务器\obj\Debug\ResolveAssemblyReference.cache
 Y:\chargePile\chargePileServer\充电桩服务器\obj\Debug\ChargingPileServer.MonitoringInterface.resources
 Y:\chargePile\chargePileServer\充电桩服务器\obj\Debug\ChargingPileServer.Properties.Resources.resources
 Y:\chargePile\chargePileServer\充电桩服务器\obj\Debug\ChargingPileServer.WinForm.OnOffSet.resources
@@ -94,8 +93,6 @@ Y:\chargePile\chargePileServer\充电桩服务器\obj\Debug\ChargingPileServer.P
 Y:\chargePile\chargePileServer\充电桩服务器\obj\Debug\ChargingPileServer.SetComPara.resources
 Y:\chargePile\chargePileServer\充电桩服务器\obj\Debug\ChargingPileServer.WinForm.UserInformChg.resources
 Y:\chargePile\chargePileServer\充电桩服务器\obj\Debug\ChargingPileServer.WinForm.UserLoin.resources
-Y:\chargePile\chargePileServer\充电桩服务器\obj\Debug\GenerateResource.read.1.tlog
-Y:\chargePile\chargePileServer\充电桩服务器\obj\Debug\GenerateResource.write.1.tlog
 Y:\chargePile\chargePileServer\充电桩服务器\obj\Debug\ChargingPileServer.exe
 Y:\chargePile\chargePileServer\充电桩服务器\obj\Debug\ChargingPileServer.pdb
 E:\充电桩\ChargePile\chargePileServer\充电桩服务器\bin\Debug\ChargingPileServer.exe
@@ -114,3 +111,6 @@ E:\充电桩\ChargePile\chargePileServer\充电桩服务器\obj\Debug\ChargingPi
 E:\充电桩\ChargePile\chargePileServer\充电桩服务器\obj\Debug\ChargingPileServer.exe
 E:\充电桩\ChargePile\chargePileServer\充电桩服务器\obj\Debug\ChargingPileServer.pdb
 E:\充电桩\ChargePile\chargePileServer\充电桩服务器\obj\Debug\ChargingPileServer.csprojResolveAssemblyReference.cache
+Y:\chargePile\chargePileServer\充电桩服务器\bin\Debug\Bmob-Windows.dll
+Y:\chargePile\chargePileServer\充电桩服务器\bin\Debug\ChargingPileServer.exe.config
+Y:\chargePile\chargePileServer\充电桩服务器\obj\Debug\ChargingPileServer.csproj.GenerateResource.Cache

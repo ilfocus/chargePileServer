@@ -17,7 +17,7 @@
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
     <OldToolsVersion>3.5</OldToolsVersion>
-    <TargetFrameworkProfile />
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -37,6 +37,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bmob-Windows">
+      <HintPath>..\..\bmob-demo-csharp-master\bmob-demo-csharp-master\examples\bmob-desktop-demo\lib\Bmob-Windows.dll</HintPath>
+    </Reference>
     <Reference Include="CPServer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\chargePileServerLib\bin\Debug\CPServer.dll</HintPath>
@@ -64,6 +67,7 @@
     <Reference Include="ZedGraph, Version=5.1.2.878, Culture=neutral, PublicKeyToken=02a83cbd123fcd60, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\BmobToolClass.cs" />
     <Compile Include="WinForm\OnOffSet.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +136,7 @@
     <EmbeddedResource Include="WinForm\UserLoin.resx">
       <DependentUpon>UserLoin.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="app.config" />
     <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

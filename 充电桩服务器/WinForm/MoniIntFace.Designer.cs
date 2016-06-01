@@ -234,7 +234,7 @@
             this.TS_LableSystemTime});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1149, 72);
+            this.toolStrip1.Size = new System.Drawing.Size(642, 72);
             this.toolStrip1.TabIndex = 31;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -409,7 +409,7 @@
             // toolStripButton7
             // 
             this.toolStripButton7.Name = "toolStripButton7";
-            this.toolStripButton7.Size = new System.Drawing.Size(23, 69);
+            this.toolStripButton7.Size = new System.Drawing.Size(23, 4);
             // 
             // TS_LableSystemTime
             // 
@@ -477,7 +477,7 @@
             // updateFrameTimer
             // 
             this.updateFrameTimer.Enabled = true;
-            this.updateFrameTimer.Interval = 1000;
+            this.updateFrameTimer.Interval = 3000;
             this.updateFrameTimer.Tick += new System.EventHandler(this.updateFrameTimer_Tick);
             // 
             // skinEngine2
@@ -497,6 +497,7 @@
             // zedGraphControl1
             // 
             this.zedGraphControl1.Location = new System.Drawing.Point(177, 334);
+            this.zedGraphControl1.Margin = new System.Windows.Forms.Padding(6);
             this.zedGraphControl1.Name = "zedGraphControl1";
             this.zedGraphControl1.ScrollGrace = 0D;
             this.zedGraphControl1.ScrollMaxX = 0D;
@@ -567,7 +568,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(3, 13);
+            this.label13.Location = new System.Drawing.Point(2, 13);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(59, 12);
             this.label13.TabIndex = 474;
@@ -1681,7 +1682,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1149, 602);
+            this.ClientSize = new System.Drawing.Size(642, 391);
             this.Controls.Add(this.tvChargePile);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel3);
